@@ -1,2 +1,2 @@
-# Red-Ridding-Hood-Games
+# Red-Riding-Hood-Games
 Project SI Agate 2023
