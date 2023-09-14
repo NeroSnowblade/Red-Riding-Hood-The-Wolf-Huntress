@@ -1,0 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerController : MonoBehaviour
+{
+    Vector3 mousePosition;
+    public float recoil;
+    public float bulletSpeed = 10f;
+    public Rigidbody rbPlayer; //variable untuk mengambil rigidbody player
+    public Transform trMousePos; //variable untuk mengembil posisi objek mousePos
+    public Transform bulletSP;//variable untuk mengambil posisi spawn poin bullet
+    public GameObject bulletPV; //variable untuk mengambil bullet Privab
+    public Transform rotpoint; // variable untuk mengambil titik dari rotasi(posisi objek bernama rotasipoint)
+    public Camera cam; // variable untuk mengambil camera
+    public Collider planecollider; // variabel untuk mengambil collider plancollider
+    // Start is called before the first frame update
+    void Start()
+    {
+        recoil = 6f;
+        rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>(); // memasukan kamera
+        rotpoint = GameObject.Find("rotasipoint").transform;
+        trMousePos = GameObject.Find("mousePos").transform;
+        bulletSP = GameObject.Find("spawnBullet").transform;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        getMousePosition();
+        rotateWepon();
+        playerAttack();
+    }
+    // fungsi player Attak
+    void playerAttack(){
+        if(Input.GetMouseButtonDown(0)){ // mengetahui jika mouse di tekan ke bawah
+            GameObject bullet = Instantiate(bulletPV,bulletSP.position,Quaternion.identity);//belum jadi
+            bullet.GetComponent<Rigidbody>().velocity = bulletSP.forward*bulletSpeed;
+            PlayerMove(mousePosition);
+        }
+    }
+// fungsi mengambil posisi mouse
+    void getMousePosition(){
+        var mousePos = Input.mousePosition;
+        mousePos.z=10;
+        mousePosition = cam.ScreenToWorldPoint(mousePos);
+        trMousePos.position = mousePosition;
+    }
+    //fungsi menggerakan player
+    void PlayerMove(Vector3 mousePos){
+        Vector3 recoilPos;
+            recoilPos = mousePos - gameObject.transform.position; // menentukan arah mousePos
+            recoilPos = new Vector3(recoilPos.x,recoilPos.y,recoilPos.z).normalized; // membuat posisi recoilPos menjadi antara -1 sampai 1
+            rbPlayer.AddForce(new Vector3(recoilPos.x,recoilPos.y,0) * -recoil,ForceMode.VelocityChange); // memberi gaya recoilPos pada object
+    }
+    // fungsi rotasi senjata
+    void rotateWepon(){
+        Vector3 rotation = mousePosition - rotpoint.position;//variabel untuk membuat rotasi (diambil dari mouse position dikurang object position(object rotasi))
+        float rotz = Mathf.Atan2(rotation.y,rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
+        rotpoint.transform.rotation = Quaternion.Euler(0,0,rotz);//membuat rotasi objek sesuai sudud variable rotz
+    }
+}
