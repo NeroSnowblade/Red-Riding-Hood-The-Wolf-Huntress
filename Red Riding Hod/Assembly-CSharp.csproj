@@ -42,8 +42,10 @@
   <ItemGroup>
      <Compile Include="Assets\Script\enemyMovement.cs" />
      <Compile Include="Assets\bulletControler.cs" />
+     <Compile Include="Assets\Script\scriptCobaWave\dataWaveLv.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
      <Compile Include="Assets\Script\spawnController.cs" />
+     <Compile Include="Assets\Script\scriptCobaWave\spawnWaveControler.cs" />
      <Compile Include="Assets\Script\playerController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\ProgramData\Unity\2022.3.7f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

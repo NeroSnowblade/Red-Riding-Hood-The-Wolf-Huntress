@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bulletController : MonoBehaviour
 {
-    public float life=3f;
+    public float life;
     // Update is called once per frame
     void Awake()
     {
