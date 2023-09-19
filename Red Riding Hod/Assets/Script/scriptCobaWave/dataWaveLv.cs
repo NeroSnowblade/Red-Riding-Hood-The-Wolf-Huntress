@@ -5,10 +5,12 @@ using UnityEngine;
 public class dataWaveLv : MonoBehaviour
 {
     public static int WaveLv;
+    public static int[] banyakMusuh;
     // Start is called before the first frame update
     void Start()
     {
         WaveLv = 1;
+        setup();
     }
 
     // Update is called once per frame
@@ -16,23 +18,26 @@ public class dataWaveLv : MonoBehaviour
     {
         
     }
+    void setup(){
+        switch (WaveLv)
+        {
+            case 1:
+                banyakMusuh = new int[waveData.banyakMusuhLv1.Length];
+                banyakMusuh = waveData.banyakMusuhLv1;
+                break;
+            case 2:
+                banyakMusuh = new int[waveData.banyakMusuhLv2.Length];
+                banyakMusuh = waveData.banyakMusuhLv2;
+                break;
+            default :
+            Debug.Log("Input Wave Lv Salah");
+            break;
+
+        }
+    }
 }
 public static class waveData
 {
-    public struct dataWaveLv
-    {
-        public static int[] BanyakEnemy = new int[4];
-        public static float[] couldownWave = new float[2];
-        public dataWaveLv(int[] BanyakEnemyValue,float[] couldownWaveValue){
-            for (int i = 0; i<couldownWaveValue.Length; i++){
-            this.couldownWave[i] = couldownWaveValue[i];}
-            for (int i = 0; i<BanyakEnemyValue.Length; i++){
-            this.BanyakEnemy[i] = BanyakEnemyValue[i];}
-        }
-    };
-    public static readonly dataWaveLv[] leveldata = new dataWaveLv[2]
-    {
-        new dataWaveLv(new int[4]{3,5,4,8},new float[2]{8f,2f}),
-        new dataWaveLv(new int[4]{3,5,4,8},new float[2]{8f,2f})
-    };
+    public static readonly int[] banyakMusuhLv1 = new int[4] {4,5,6,8};
+    public static readonly int[] banyakMusuhLv2 = new int[4] {5,5,7,8};
 }
