@@ -6,7 +6,7 @@ public class playerController : MonoBehaviour
 {
     Vector3 mousePosition;
     public float recoil;
-    public float bulletSpeed = 10f;
+    public float bulletForce;
     public Rigidbody rbPlayer; //variable untuk mengambil rigidbody player
     public Transform trMousePos; //variable untuk mengembil posisi objek mousePos
     public Transform bulletSP;//variable untuk mengambil posisi spawn poin bullet
@@ -17,6 +17,7 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bulletForce = 15f;
         recoil = 6f;
         rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>(); // memasukan kamera
@@ -34,10 +35,20 @@ public class playerController : MonoBehaviour
     }
     // fungsi player Attak
     void playerAttack(){
+        bool isAttack = false;
         if(Input.GetMouseButtonDown(0)){ // mengetahui jika mouse di tekan ke bawah
-            GameObject bullet = Instantiate(bulletPV,bulletSP.position,Quaternion.identity);//belum jadi
-            bullet.GetComponent<Rigidbody>().velocity = bulletSP.forward*bulletSpeed;
+            isAttack = true;
+        }
+        if (isAttack){
+            for (int i = -2; i<2;i++){
+                var bullet = Instantiate(bulletPV,bulletSP.position,bulletSP.rotation);//belum jadi
+                Vector3 rotation = mousePosition - rotpoint.position;//variabel untuk membuat rotasi (diambil dari mouse position dikurang object position(object rotasi))
+                float rotz = Mathf.Atan2(rotation.y,rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
+                bullet.transform.rotation = Quaternion.Euler(180+rotz+(3f*i),-90,0);
+                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
+            }
             PlayerMove(mousePosition);
+            isAttack = false;
         }
     }
 // fungsi mengambil posisi mouse
