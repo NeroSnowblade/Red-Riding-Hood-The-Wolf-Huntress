@@ -47,7 +47,7 @@ public class playerController : MonoBehaviour
                 bullet.transform.rotation = Quaternion.Euler(180+rotz+(3f*i),-90,0);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
             }
-            //PlayerMove(mousePosition);
+            PlayerMove(mousePosition);
             isAttack = false;
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class spawnWaveControler : MonoBehaviour
 {
     int sesi;
+    int[] banyakMusuh;
     public GameObject[] spawnpoint;//membuat array spawnpoint
     public GameObject enemyPrivab;//inisiasi enemy
     int jumlahEnemy;// memasukan jumlah enemy
@@ -15,6 +16,8 @@ public class spawnWaveControler : MonoBehaviour
     void Start()
     {
         sesi = 0;
+        banyakMusuh = new int[dataWaveLv.banyakMusuh.Length];
+        banyakMusuh = dataWaveLv.banyakMusuh;
         spawnpoint = GameObject.FindGameObjectsWithTag("SpawnPoint");// memasukan spawnpoin ke array
         jumlahEnemy = 0; //mengisi jumlah awal agar 0
     }
@@ -33,13 +36,13 @@ public class spawnWaveControler : MonoBehaviour
             couldowntime = 0;
         }
         else if (couldowntime == 0){
-            spawnEnemy(jumlahEnemy, dataWaveLv.banyakMusuh[sesi]);
+            spawnEnemy(jumlahEnemy,banyakMusuh[sesi]);
             jumlahEnemy++;
             couldowntime = couldownn;
         }
     }
     void waveControler(){
-        if(sesi < dataWaveLv.banyakMusuh.Length){
+        if(sesi < banyakMusuh.Length){
             if (!isRehat){
                 if (sesi%2 == 0)
                 {

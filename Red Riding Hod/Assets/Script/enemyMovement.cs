@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyMovement : MonoBehaviour
 {
-    public float gayadorong = 1f;
+    public float gayadorong;
     public Transform player;
     public Rigidbody rb;
     float arahloncatan;
@@ -13,6 +13,7 @@ public class enemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gayadorong = 2f;
         player = GameObject.Find("player").transform;
         rb = this.GetComponent<Rigidbody>();
     }
