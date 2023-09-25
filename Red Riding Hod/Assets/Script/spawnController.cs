@@ -46,17 +46,18 @@ public class spawnController : MonoBehaviour
                 if (sesi%2 == 0)
                 {
                     couldownSpawnEnemy(4f);
-                    Debug.Log("sesi normal");
+                    //Debug.Log("sesi normal");
                 }
                 else
                 {
                     couldownSpawnEnemy(2f);
-                    Debug.Log("sesi wave");
+                    //Debug.Log("sesi wave");
                 }
             }else{
                 nextWave(8f);
             }
-        }else{Debug.Log("game over");} 
+        }else{//Debug.Log("game over");
+        } 
     }
     // membuat couldown untuk menuju sesi selanjutnya
     void nextWave(float couldownn){
@@ -69,7 +70,7 @@ public class spawnController : MonoBehaviour
         if(couldowntime == 0){
             sesi++;
             jumlahEnemy=0;
-            Debug.Log("jumlah enemy");
+            //Debug.Log("jumlah enemy");
             isRehat = false;
             couldowntime = couldownn;
         }
@@ -83,7 +84,7 @@ public class spawnController : MonoBehaviour
         }else
         {
             isRehat = true;
-            Debug.Log("sesi ke" + sesi);
+            //Debug.Log("sesi ke" + sesi);
         }
     }
 }

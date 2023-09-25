@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    bool isFacing;
     Vector3 mousePosition;
     public float recoil;
     public float bulletForce;
@@ -13,11 +14,11 @@ public class playerController : MonoBehaviour
     public GameObject bulletPV; //variable untuk mengambil bullet Privab
     public Transform rotpoint; // variable untuk mengambil titik dari rotasi(posisi objek bernama rotasipoint)
     public Camera cam; // variable untuk mengambil camera
-    public Collider planecollider; // variabel untuk mengambil collider plancollider
     // Start is called before the first frame update
     void Start()
     {
-        bulletForce = 15f;
+        isFacing = false;
+        bulletForce = 15f;  
         recoil = 6f;
         rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>(); // memasukan kamera
@@ -32,6 +33,7 @@ public class playerController : MonoBehaviour
         getMousePosition();
         rotateWepon();
         playerAttack();
+        Facing();
     }
     // fungsi player Attak
     void playerAttack(){
@@ -70,5 +72,19 @@ public class playerController : MonoBehaviour
         Vector3 rotation = mousePosition - rotpoint.position;//variabel untuk membuat rotasi (diambil dari mouse position dikurang object position(object rotasi))
         float rotz = Mathf.Atan2(rotation.y,rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
         rotpoint.transform.rotation = Quaternion.Euler(0,0,rotz);//membuat rotasi objek sesuai sudud variable rotz
+    }
+    // facing
+    void Facing(){
+        if(mousePosition.x - transform.position.x < 0 && !isFacing){
+            transform.rotation = Quaternion.Euler(0,180,0);
+            isFacing = true;
+            Debug.Log(isFacing);
+        }
+        if(mousePosition.x - transform.position.x > 0 && isFacing){
+            transform.rotation = Quaternion.Euler(0,0,0);
+            isFacing = false;
+            Debug.Log(isFacing);
+        }
+
     }
 }
