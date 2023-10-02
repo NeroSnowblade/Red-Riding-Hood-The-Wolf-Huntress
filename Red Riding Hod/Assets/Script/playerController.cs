@@ -56,8 +56,9 @@ public class playerController : MonoBehaviour
                 bullet.transform.rotation = Quaternion.Euler(180+rotz+(3f*i),-90,0);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
             }
-            var scythe = Instantiate(scythePv,scytheSp.position,Quaternion.identity);
             PlayerMove(mousePosition);
+            new WaitForSeconds(0.5f);
+            var scythe = Instantiate(scythePv,scytheSp.position,Quaternion.identity);
             isAttack = false;
         }
     }

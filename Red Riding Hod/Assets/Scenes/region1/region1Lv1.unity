@@ -1948,6 +1948,10 @@ PrefabInstance:
       value: Level_1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdafc4d8cb54f5540aa6cec0712871d2, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cdafc4d8cb54f5540aa6cec0712871d2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}

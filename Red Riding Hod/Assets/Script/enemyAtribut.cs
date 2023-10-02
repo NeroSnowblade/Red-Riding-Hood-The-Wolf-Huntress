@@ -8,6 +8,7 @@ public class enemyAtribut : MonoBehaviour
     public float HpEnemy;
     public static float Damage;
     playerAtribut scripAtribut;
+    public Collider scythePrivab; 
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class enemyAtribut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Destroy();
     }
 
     public void TakeDamage(float Damage){
@@ -30,18 +31,19 @@ public class enemyAtribut : MonoBehaviour
         Debug.Log(HpEnemy);
     }
 
-    private void OnCollisionEnter(Collision collision) // cek apakah ada object yang masuk
+    private void OnTriggerEnter(Collider collider) // cek apakah ada object yang masuk
     {
-        Debug.Log("collision ada"); // muncul di terminal
-        if (collision.collider.tag == "Scythe") // cek object yang masuk adalah Scythe (kemungkinan error di sini)
+        // Debug.Log("collision ada"); // muncul di terminal
+        if (collider.tag == "Scythe") // cek object yang masuk adalah Scythe (kemungkinan error di sini)
         {
             Debug.Log("scythe ada"); // tidak muncul di terminal
             TakeDamage(scripAtribut.damagePlayer);
         }
     }
-    private void OnCollisionExit(Collision collision) // abaikan dulu
-    {
-        if (collision.collider.tag == "Scythe"){
+
+    void Destroy(){
+        if(HpEnemy<=0){
+            Destroy(gameObject);
         }
     }
 

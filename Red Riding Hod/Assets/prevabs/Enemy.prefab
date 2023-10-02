@@ -166,3 +166,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHpEnemy: 0
   HpEnemy: 0
+  scythePrivab: {fileID: 331249060516800480, guid: 426b39a9bd82d3841bb642dce43e8ac4, type: 3}
