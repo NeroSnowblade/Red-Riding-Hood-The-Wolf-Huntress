@@ -15,7 +15,6 @@ public class enemyAtribut : MonoBehaviour
         maxHpEnemy = 100f;
         HpEnemy = maxHpEnemy; 
         Damage = 10f;
-        isKenaDamage = false;
         scripAtribut = GameObject.Find("player").GetComponent<playerAtribut>();
         
     }    
