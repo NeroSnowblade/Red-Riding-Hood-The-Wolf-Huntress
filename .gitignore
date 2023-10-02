@@ -1,0 +1,7 @@
+
+Red Riding Test 2/Library/*
+Red Riding Test 2/Logs/*
+Red Riding Test 2/Temp/*
+
+.vsconfig
+*.sln
