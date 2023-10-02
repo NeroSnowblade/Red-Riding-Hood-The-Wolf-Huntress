@@ -811,6 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811542ce91af11c4291cf5426e595d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttack: 0
   recoil: 0
   bulletForce: 0
   rbPlayer: {fileID: 0}

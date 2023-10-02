@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3124150550698867344}
   - component: {fileID: 4962999926497694934}
   - component: {fileID: -2739149271760447601}
+  - component: {fileID: 6773129213457961646}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.08, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -134,7 +135,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 88
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &-2739149271760447601
 MonoBehaviour:
@@ -148,3 +149,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf38c557f9398245964048421fd33aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gayadorong: 2
+  player: {fileID: 0}
+  rb: {fileID: 0}
+--- !u!114 &6773129213457961646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464576387484014867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3257797356c103141a7caa49a4346fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHpEnemy: 0
+  HpEnemy: 0

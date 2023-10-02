@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\enemyMovement.cs" />
+     <Compile Include="Assets\Script\playerAtribut.cs" />
+     <Compile Include="Assets\Script\enemyAtribut.cs" />
+     <Compile Include="Assets\Script\scytheController.cs" />
      <Compile Include="Assets\Script\scriptCobaWave\dataWaveLv.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
      <Compile Include="Assets\Script\spawnController.cs" />

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    public bool isAttack;
     bool isFacing;
     Vector3 mousePosition;
     public float recoil;
@@ -14,9 +15,14 @@ public class playerController : MonoBehaviour
     public GameObject bulletPV; //variable untuk mengambil bullet Privab
     public Transform rotpoint; // variable untuk mengambil titik dari rotasi(posisi objek bernama rotasipoint)
     public Camera cam; // variable untuk mengambil camera
+
+    public Transform scytheSp;
+    public GameObject scythePv;
+
     // Start is called before the first frame update
     void Start()
     {
+        isAttack = false;
         isFacing = false;
         bulletForce = 15f;  
         recoil = 6f;
@@ -25,6 +31,7 @@ public class playerController : MonoBehaviour
         rotpoint = GameObject.Find("rotasipoint").transform;
         trMousePos = GameObject.Find("mousePos").transform;
         bulletSP = GameObject.Find("spawnBullet").transform;
+        scytheSp = GameObject.Find("scytheSpawnPoint").transform;
     }
 
     // Update is called once per frame
@@ -37,7 +44,7 @@ public class playerController : MonoBehaviour
     }
     // fungsi player Attak
     void playerAttack(){
-        bool isAttack = false;
+        
         if(Input.GetMouseButtonDown(0)){ // mengetahui jika mouse di tekan ke bawah
             isAttack = true;
         }
@@ -49,6 +56,7 @@ public class playerController : MonoBehaviour
                 bullet.transform.rotation = Quaternion.Euler(180+rotz+(3f*i),-90,0);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
             }
+            var scythe = Instantiate(scythePv,scytheSp.position,Quaternion.identity);
             PlayerMove(mousePosition);
             isAttack = false;
         }
@@ -62,7 +70,7 @@ public class playerController : MonoBehaviour
     }
     //fungsi menggerakan player
     void PlayerMove(Vector3 mousePos){
-        Vector3 recoilPos;
+            Vector3 recoilPos;
             recoilPos = mousePos - gameObject.transform.position; // menentukan arah mousePos
             recoilPos = new Vector3(recoilPos.x,recoilPos.y,recoilPos.z).normalized; // membuat posisi recoilPos menjadi antara -1 sampai 1
             rbPlayer.AddForce(new Vector3(recoilPos.x,recoilPos.y,0) * -recoil,ForceMode.VelocityChange); // memberi gaya recoilPos pada object
@@ -78,13 +86,10 @@ public class playerController : MonoBehaviour
         if(mousePosition.x - transform.position.x < 0 && !isFacing){
             transform.rotation = Quaternion.Euler(0,180,0);
             isFacing = true;
-            Debug.Log(isFacing);
         }
         if(mousePosition.x - transform.position.x > 0 && isFacing){
             transform.rotation = Quaternion.Euler(0,0,0);
             isFacing = false;
-            Debug.Log(isFacing);
         }
-
     }
 }
