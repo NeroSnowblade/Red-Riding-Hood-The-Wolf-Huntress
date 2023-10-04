@@ -796,7 +796,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1986585174}
-  - {fileID: 1258702326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1007214484
@@ -820,6 +819,8 @@ MonoBehaviour:
   bulletPV: {fileID: 6673428321058643231, guid: 9983e3196bc64fb488798adc32ec8533, type: 3}
   rotpoint: {fileID: 0}
   cam: {fileID: 0}
+  scytheSp: {fileID: 0}
+  scythePv: {fileID: 0}
 --- !u!54 &1007214485
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -910,7 +911,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 1, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2082243014}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1219025674
 MeshCollider:
@@ -1138,3 +1139,4 @@ SceneRoots:
   - {fileID: 852906495}
   - {fileID: 1640220521}
   - {fileID: 116310478}
+  - {fileID: 1219025673}

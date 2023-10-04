@@ -23,8 +23,7 @@ public class playerController : MonoBehaviour
     void Start()
     {
         isAttack = false;
-        isFacing = false;
-        bulletForce = 15f;  
+        isFacing = false;  
         bulletForce = 15f;
         recoil = 6f;
         rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
@@ -57,6 +56,8 @@ public class playerController : MonoBehaviour
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
             }
             PlayerMove(mousePosition);
+            var Scythe = Instantiate(scythePv,scytheSp.position,Quaternion.identity);
+            isAttack = false;
         }
     }
 // fungsi mengambil posisi mouse

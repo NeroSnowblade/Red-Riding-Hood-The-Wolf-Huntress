@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\enemyMovement.cs" />
-     <Compile Include="Assets\bulletControler.cs" />
+     <Compile Include="Assets\Script\playerAtribut.cs" />
+     <Compile Include="Assets\Script\enemyAtribut.cs" />
+     <Compile Include="Assets\Script\scytheController.cs" />
+     <Compile Include="Assets\Script\scriptCobaWave\dataWaveLv.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
      <Compile Include="Assets\Script\spawnController.cs" />
      <Compile Include="Assets\Script\sceneController\sceneControler.cs" />
@@ -318,10 +321,10 @@
         <HintPath>C:\ProgramData\Unity\2022.3.7f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
         <HintPath>C:\ProgramData\Unity\2022.3.7f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -699,82 +702,82 @@
         <HintPath>C:\ProgramData\Unity\2022.3.7f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Editor">
         <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Base">
         <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    <Reference Include="Unity.Recorder">
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>A:\github\coba clone\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+        <HintPath>A:\github\unity\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
