@@ -25,6 +25,7 @@ public class playerController : MonoBehaviour
         isAttack = false;
         isFacing = false;
         bulletForce = 15f;  
+        bulletForce = 15f;
         recoil = 6f;
         rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>(); // memasukan kamera
@@ -44,7 +45,6 @@ public class playerController : MonoBehaviour
     }
     // fungsi player Attak
     void playerAttack(){
-        
         if(Input.GetMouseButtonDown(0)){ // mengetahui jika mouse di tekan ke bawah
             isAttack = true;
         }
@@ -57,9 +57,6 @@ public class playerController : MonoBehaviour
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
             }
             PlayerMove(mousePosition);
-            new WaitForSeconds(0.5f);
-            var scythe = Instantiate(scythePv,scytheSp.position,Quaternion.identity);
-            isAttack = false;
         }
     }
 // fungsi mengambil posisi mouse
