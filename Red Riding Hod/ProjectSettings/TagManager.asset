@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnPoint
+  - Enemy
+  - Scythe
+  - Ground
   layers:
   - Default
   - TransparentFX
