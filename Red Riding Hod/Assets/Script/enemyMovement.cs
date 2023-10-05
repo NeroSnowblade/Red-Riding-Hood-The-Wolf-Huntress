@@ -22,7 +22,7 @@ public class enemyMovement : MonoBehaviour
         jumpForce = 5.0f;
         moveSpeed = 2.0f;
         jumpInterval = 3.0f;
-        attackRange = 2f;
+        attackRange = 1.5f;
         scalex = gameObject.transform.localScale.x;
 
         canJump = true;

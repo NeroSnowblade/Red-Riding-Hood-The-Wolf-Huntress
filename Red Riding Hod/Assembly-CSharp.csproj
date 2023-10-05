@@ -46,8 +46,10 @@
      <Compile Include="Assets\Script\scytheController.cs" />
      <Compile Include="Assets\Script\scriptCobaWave\dataWaveLv.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
+     <Compile Include="Assets\Script\AttackArea.cs" />
      <Compile Include="Assets\Script\spawnController.cs" />
      <Compile Include="Assets\Script\sceneController\sceneControler.cs" />
+     <Compile Include="Assets\Script\EnemyAttack.cs" />
      <Compile Include="Assets\Script\scriptCobaWave\spawnWaveControler.cs" />
      <Compile Include="Assets\Script\playerController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -20,4 +20,22 @@ public class playerAtribut : MonoBehaviour
     {
         
     }
+    public void takeDamage(float damage){
+        if (damage < 0)
+        {
+            throw new System.ArgumentOutOfRangeException("Cannot Have Negative Damage");
+        }
+
+        this.hpPlayer -= damage;
+
+        if(hpPlayer <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(this.gameObject);
+    }
 }
