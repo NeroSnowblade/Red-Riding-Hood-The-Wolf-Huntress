@@ -52,7 +52,7 @@ public class playerController : MonoBehaviour
                 var bullet = Instantiate(bulletPV,bulletSP.position,bulletSP.rotation);//belum jadi
                 Vector3 rotation = mousePosition - rotpoint.position;//variabel untuk membuat rotasi (diambil dari mouse position dikurang object position(object rotasi))
                 float rotz = Mathf.Atan2(rotation.y,rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
-                bullet.transform.rotation = Quaternion.Euler(180+rotz+(3f*i),-90,0);
+                bullet.transform.rotation = Quaternion.Euler(180+rotz+(3f*i),270,0);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
             }
             PlayerMove(mousePosition);

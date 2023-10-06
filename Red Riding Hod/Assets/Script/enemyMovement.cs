@@ -8,7 +8,6 @@ public class enemyMovement : MonoBehaviour
     public float moveSpeed;
     public float jumpInterval;
     public float attackRange;
-    public float scalex;
 
     private Rigidbody rb;
     private Transform player;
@@ -23,7 +22,6 @@ public class enemyMovement : MonoBehaviour
         moveSpeed = 2.0f;
         jumpInterval = 3.0f;
         attackRange = 1.5f;
-        scalex = gameObject.transform.localScale.x;
 
         canJump = true;
         isFacingRight = true;
@@ -76,10 +74,8 @@ public class enemyMovement : MonoBehaviour
     void FlipEnemy(bool faceRight)
     {
         // Membalikkan Sprite musuh ke arah yang ditentukan.
-        isFacingRight = faceRight;
-        Vector3 scale = transform.localScale;
-        scale.x = faceRight ? scalex : -scalex;
-        transform.localScale = scale;
+        isFacingRight = faceRight; 
+        transform.rotation = faceRight ? Quaternion.Euler(0,0,0) : Quaternion.Euler(0,180,0);
     }
 }
 
