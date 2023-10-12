@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964128, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 256874410}
   - component: {fileID: 256874409}
   - component: {fileID: 256874408}
+  - component: {fileID: 256874411}
   m_Layer: 5
   m_Name: btBack
   m_TagString: Untagged
@@ -595,9 +596,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 942168371}
-        m_TargetAssemblyTypeName: sceneControler, Assembly-CSharp
-        m_MethodName: toMenu
+      - m_Target: {fileID: 2014453562}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -605,7 +606,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &256874409
 MonoBehaviour:
@@ -645,6 +646,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256874406}
   m_CullTransparentMesh: 1
+--- !u!114 &256874411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256874406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3731523b466f84b96345e159af020b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Backsound
+    clip: {fileID: 8300000, guid: c47c3c528ee56db4bae9139d2fca4231, type: 3}
+    volume: 0.4
+    loop: 0
+    output: {fileID: 6407103834528721980, guid: ec8cc6c23e38ca745b4af8648dfcb8ee, type: 2}
+    source: {fileID: 0}
+  - name: Klik
+    clip: {fileID: 8300000, guid: 419a605b4218344419cea5477961d043, type: 3}
+    volume: 0.4
+    loop: 0
+    output: {fileID: 6093874076987539798, guid: ec8cc6c23e38ca745b4af8648dfcb8ee, type: 2}
+    source: {fileID: 0}
 --- !u!1 &279828886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1861,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1576992731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2014453559}
+        m_TargetAssemblyTypeName: ArenaManager, Assembly-CSharp
+        m_MethodName: StartGame2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1576992731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,9 +2201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 942168371}
+      - m_Target: {fileID: 2014453557}
         m_TargetAssemblyTypeName: sceneControler, Assembly-CSharp
-        m_MethodName: toShop
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2334,6 +2372,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953544425}
   m_CullTransparentMesh: 1
+--- !u!1 &2014453557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2014453560}
+  - component: {fileID: 2014453559}
+  - component: {fileID: 2014453558}
+  - component: {fileID: 2014453562}
+  - component: {fileID: 2014453563}
+  m_Layer: 0
+  m_Name: GameContoller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2014453558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014453557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8033adbc2f61cae4e9b625aa6cd82d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2014453559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014453557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c840856d1f34394395a593c30a26c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SetUI: {fileID: 0}
+--- !u!4 &2014453560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014453557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1966114.2, y: 621474.25, z: -12907.994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2014453562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014453557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5baf2aa419f0ce4d9c99019df493264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
+  sceneName: MainMenu
+  SetUI: {fileID: 0}
+--- !u!114 &2014453563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014453557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3731523b466f84b96345e159af020b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: bgm
+    clip: {fileID: 8300000, guid: c47c3c528ee56db4bae9139d2fca4231, type: 3}
+    volume: 0.6
+    loop: 1
+    output: {fileID: 6407103834528721980, guid: ec8cc6c23e38ca745b4af8648dfcb8ee, type: 2}
+    source: {fileID: 0}
+  - name: klik
+    clip: {fileID: 8300000, guid: 419a605b4218344419cea5477961d043, type: 3}
+    volume: 0.6
+    loop: 0
+    output: {fileID: 6093874076987539798, guid: ec8cc6c23e38ca745b4af8648dfcb8ee, type: 2}
+    source: {fileID: 0}
 --- !u!1 &2073991325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,7 +2554,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2073991328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2014453559}
+        m_TargetAssemblyTypeName: ArenaManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2073991328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,3 +2613,4 @@ SceneRoots:
   - {fileID: 713151491}
   - {fileID: 339705952}
   - {fileID: 942168370}
+  - {fileID: 2014453560}
