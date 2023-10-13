@@ -13,8 +13,6 @@ public class GameControl : MonoBehaviour
     private AudioManager audioManager;
     public GameObject SetUI;
 
-    public GameObject resultUI;
-
 
 
     public void ShowSettingPanel()
@@ -75,7 +73,13 @@ public class GameControl : MonoBehaviour
     public void ToMenu()
     {
         GameStart();
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("MainMenu");
+        audioManager.PlaySound("Klik");
+    }
+    public void ToShop()
+    {
+        GameStart();
+        SceneManager.LoadScene("mainShop");
         audioManager.PlaySound("Klik");
     }
 
