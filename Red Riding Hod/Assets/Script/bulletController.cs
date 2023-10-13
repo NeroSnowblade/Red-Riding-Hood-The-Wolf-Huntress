@@ -16,8 +16,8 @@ public class bulletController : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             col.gameObject.GetComponent<enemyAtribut>().TakeDamage(20);
-            GameObject newBlood = Instantiate(blood, this.transform.position, this.transform.rotation);
-            newBlood.transform.parent = col.transform;
+            // GameObject newBlood = Instantiate(blood, this.transform.position, this.transform.rotation);
+            // newBlood.transform.parent = col.transform;
             Destroy(this.gameObject);
         }
     }
