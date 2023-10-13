@@ -84,6 +84,48 @@ public class spawnWaveControler : MonoBehaviour
             isRehat = true;
             Debug.Log("sesi ke" + sesi);
         }
+<<<<<<< Updated upstream
+=======
+        state = spawnState.waiting;
+    }
+
+    void SpawnEnemy(Transform _enemy)
+    {
+        Transform _sp = spawnPoints[Random.Range(0,spawnPoints.Length)].transform; // mengambil spawn point random
+        Instantiate(_enemy,_sp.position,_sp.rotation); // spawn enemy
+        Debug.Log("spawning enemy : "+_enemy.name);
+    }
+    // ketika wave sudah selesai
+    void WaveComplited()
+    {
+        Debug.Log("Wave Complited");
+        goldUI.addGold(waves[nextWave].BonusGold);
+        if(nextWave + 1 > waves.Length - 1)// jika sesi wave lebih besar deri banyak wave - 1
+        {
+            Debug.Log("you win!"); // game complite
+            state = spawnState.ending;
+        }else{
+            nextWave++; // next sesi
+            state = spawnState.counting; // mengembalikan state ke counting
+            waveCountdown = timeBetweenWave; // mengembalikan countdown ke waktu tunggu wave
+            waveUI.SetPanelWave(waves[nextWave].name,waves[nextWave].isWave,timeBetweenWave); // munculin ui wave
+        }
+
+    }
+    // mendeteksi enemi apakah ada yang masih hidup
+    bool EnemyIsAlive()
+    {
+        SearchCountdown -= Time.deltaTime; // waktu searching
+        if(SearchCountdown <= 0)// searching setiap 1 detik
+        {
+            SearchCountdown = 1f;
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0) // jika enemy tidak ada
+            {
+                return false;
+            }
+        }
+        return true;
+>>>>>>> Stashed changes
     }
 
 }
