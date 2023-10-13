@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964128, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2201,9 +2201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014453557}
-        m_TargetAssemblyTypeName: sceneControler, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 2014453562}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: ToShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
