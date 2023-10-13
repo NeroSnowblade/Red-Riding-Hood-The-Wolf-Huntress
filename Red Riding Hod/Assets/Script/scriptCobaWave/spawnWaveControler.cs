@@ -106,7 +106,7 @@ public class spawnWaveControler : MonoBehaviour
             nextWave++; // next sesi
             state = spawnState.counting; // mengembalikan state ke counting
             waveCountdown = timeBetweenWave; // mengembalikan countdown ke waktu tunggu wave
-            waveUI.SetPanelWave(waves[nextWave].name,true,timeBetweenWave); // munculin ui wave
+            waveUI.SetPanelWave(waves[nextWave].name,waves[nextWave].isWave,timeBetweenWave); // munculin ui wave
         }
 
     }
