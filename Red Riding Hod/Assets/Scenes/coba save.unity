@@ -4384,13 +4384,10 @@ MonoBehaviour:
       weaponsLv:
       - costLvUnlock: 0
         damage: 10
-        atkSpeed: 1
       - costLvUnlock: 100
         damage: 15
-        atkSpeed: 1.1
       - costLvUnlock: 300
         damage: 20
-        atkSpeed: 1.2
     - name: Flamegun
       isUnlock: 0
       unlockCost: 0
@@ -4398,13 +4395,10 @@ MonoBehaviour:
       weaponsLv:
       - costLvUnlock: 200
         damage: 10
-        atkSpeed: 0.2
       - costLvUnlock: 400
         damage: 15
-        atkSpeed: 0.3
       - costLvUnlock: 600
         damage: 20
-        atkSpeed: 0.4
     - name: Bazoka
       isUnlock: 0
       unlockCost: 0
@@ -4412,13 +4406,10 @@ MonoBehaviour:
       weaponsLv:
       - costLvUnlock: 500
         damage: 10
-        atkSpeed: 0.5
       - costLvUnlock: 700
         damage: 15
-        atkSpeed: 0.6
       - costLvUnlock: 800
         damage: 20
-        atkSpeed: 0.7
     playerAttributeData:
     - name: Armor
       unlockCost: 0
