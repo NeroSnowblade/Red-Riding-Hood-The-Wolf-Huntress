@@ -46,10 +46,13 @@
      <Compile Include="Assets\Script\dataController\SaveLoadData.cs" />
      <Compile Include="Assets\Script\enemyAtribut.cs" />
      <Compile Include="Assets\Script\sceneController\GameControl.cs" />
+     <Compile Include="Assets\Script\dataController\SaveLoadMainData.cs" />
+     <Compile Include="Assets\Script\dataController\SaveLoadDataSlot.cs" />
      <Compile Include="Assets\Script\sceneController\MenuScript.cs" />
      <Compile Include="Assets\Script\sceneController\MainMenu.cs" />
      <Compile Include="Assets\Script\shopButtonController.cs" />
      <Compile Include="Assets\Script\scytheController.cs" />
+     <Compile Include="Assets\Script\dataController\DataTemplate.cs" />
      <Compile Include="Assets\Script\Sound.cs" />
      <Compile Include="Assets\Script\ui\GameOverUIController.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
