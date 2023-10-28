@@ -4438,6 +4438,9 @@ MonoBehaviour:
       - costLvUnlock: 300
         Amount: 150
   SaveLoadData: {fileID: 2128070528}
+  DataSlot: {fileID: 2128070530}
+  MainData: {fileID: 2128070529}
+  atributDataLv: {fileID: 11400000, guid: 249c87e28c2d3f947a9430bdb5acef82, type: 2}
   LvShotgun: {fileID: 73518626}
   LvFlamegun: {fileID: 1368269351}
   LvBazoka: {fileID: 2047154688}
@@ -4487,13 +4490,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiShop: {fileID: 1521558950}
-  SaveLoadData: {fileID: 2128070528}
+  MainData: {fileID: 2128070529}
+  AtributData: {fileID: 11400000, guid: 249c87e28c2d3f947a9430bdb5acef82, type: 2}
   UpButShotgun: {fileID: 1092519290}
   UpButFlamegun: {fileID: 1525987172}
   UpButBazoka: {fileID: 1599110403}
   UpButArmor: {fileID: 1274619892}
   UpButHp: {fileID: 719746720}
-  totalCoints: 5000
+  totalCoints: 0
   curentLvSg: 0
   curentLvFg: 0
   curentLvBz: 0
@@ -6343,6 +6347,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2128070527}
   - component: {fileID: 2128070528}
+  - component: {fileID: 2128070530}
+  - component: {fileID: 2128070529}
   m_Layer: 0
   m_Name: Save LoadShopData
   m_TagString: Untagged
@@ -6378,6 +6384,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopUI: {fileID: 1521558950}
+--- !u!114 &2128070529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128070526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872078a3f487e874a9621a2ec1e1acb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SavedDataSlot: {fileID: 2128070530}
+  MainData:
+    totalGold: 100
+    unlockLvRegion: 1
+    unlockStage: 1
+    lvAtribut:
+    - nama: Shotgun
+      lv: 0
+      isUnlock: 1
+    - nama: Flamegun
+      lv: 0
+      isUnlock: 0
+    - nama: Bazooka
+      lv: 0
+      isUnlock: 0
+    - nama: Hp
+      lv: 0
+      isUnlock: 1
+    - nama: Armor
+      lv: 0
+      isUnlock: 1
+  Index: 0
+--- !u!114 &2128070530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128070526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ee8ee00f7f8c245ab2819ca7b9c1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataSlot:
+    DataSlot:
+    - namaSlot: 
+      namaFileJson: 
+      waktuMain:
+        jam: 0
+        menit: 0
+        detik: 0
+      isEmpety: 0
+      unlockLvRegion: 0
+      unlockStage: 0
+    - namaSlot: 
+      namaFileJson: 
+      waktuMain:
+        jam: 0
+        menit: 0
+        detik: 0
+      isEmpety: 0
+      unlockLvRegion: 0
+      unlockStage: 0
+    - namaSlot: 
+      namaFileJson: 
+      waktuMain:
+        jam: 0
+        menit: 0
+        detik: 0
+      isEmpety: 0
+      unlockLvRegion: 0
+      unlockStage: 0
+    - namaSlot: 
+      namaFileJson: 
+      waktuMain:
+        jam: 0
+        menit: 0
+        detik: 0
+      isEmpety: 0
+      unlockLvRegion: 0
+      unlockStage: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

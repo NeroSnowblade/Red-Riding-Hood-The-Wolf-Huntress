@@ -10,6 +10,9 @@ namespace ShopSystem
     {
        public ShopData ShopData;
        public SaveLoadData SaveLoadData;
+       public SaveLoadDataSlot DataSlot;
+       public SaveLoadMainData MainData;
+       public SciptableAtribut atributDataLv;
        public TMP_Text LvShotgun,LvFlamegun,LvBazoka,LvArmor,LvHp, txtTotalCoint;
        public TMP_Text SgInfoText,FgInfoText,BzInfoText,ArmorInfoText,HpInfoText;
        public TMP_Text txtUpButShotgun,txtUpButFlamegun,txtUpButBazoka,txtUpButArmor,txtUpButHp;
@@ -19,11 +22,13 @@ namespace ShopSystem
        void Start()
        {
             SaveLoadData.Initialized();
-            setSgText(ShopData.weaponsData[0].unlockLv);
-            setFgText(ShopData.weaponsData[1].unlockLv);
-            setBzText(ShopData.weaponsData[2].unlockLv);
-            setArmorText(ShopData.playerAttributeData[0].unlockLv);
-            setHpText(ShopData.playerAttributeData[1].unlockLv);
+            DataSlot.InitializedDataSlot();
+            MainData.InitializedMainData();
+            setSgText(MainData.MainData.lvAtribut[0].lv);
+            setFgText(MainData.MainData.lvAtribut[1].lv);
+            setBzText(MainData.MainData.lvAtribut[2].lv);
+            setArmorText(MainData.MainData.lvAtribut[3].lv);
+            setHpText(MainData.MainData.lvAtribut[4].lv);
 
             // UpButShotgun.onClick.AddListener(() => ButtonUpgradeMethode(1));
             // UpButFlamegun.onClick.AddListener(() => ButtonUpgradeMethode(2));
@@ -38,16 +43,16 @@ namespace ShopSystem
 
        public void setSgText(int curentLv)
        {
-        if (ShopData.weaponsData[0].isUnlock){
-            SgInfoText.text = "Damage : "+ShopData.weaponsData[0].weaponsLv[curentLv].damage+"\nAttack Speed : "+ ShopData.weaponsData[0].weaponsLv[curentLv].atkSpeed;
+        if (MainData.MainData.lvAtribut[0].isUnlock){
+            SgInfoText.text = "Damage : "+atributDataLv.WeaponsData[0].weaponsLv[curentLv].damage+"\nAttack Speed : "+ atributDataLv.WeaponsData[0].weaponsLv[curentLv].atkSpeed;
             if(curentLv < 0)
             {
                 Debug.Log("curentLv out of range");
-            }else if(curentLv < ShopData.weaponsData[0].weaponsLv.Length - 1)
+            }else if(curentLv < atributDataLv.WeaponsData[0].weaponsLv.Length - 1)
             {
-                txtUpButShotgun.text = "Upgrade Cost "+ShopData.weaponsData[0].weaponsLv[curentLv+1].costLvUnlock;
+                txtUpButShotgun.text = "Upgrade Cost "+atributDataLv.WeaponsData[0].weaponsLv[curentLv+1].costLvUnlock;
                 LvShotgun.text = "Level " + (curentLv + 1);
-            }else if(curentLv >= ShopData.weaponsData[0].weaponsLv.Length - 1)
+            }else if(curentLv >= atributDataLv.WeaponsData[0].weaponsLv.Length - 1)
             {
                 UpButShotgun.interactable = false;
                 txtUpButShotgun.text = "Max";
@@ -56,23 +61,23 @@ namespace ShopSystem
         }else 
         {
             SgInfoText.text = "(Lock)";
-            txtUpButShotgun.text = "Unlock Cost " + ShopData.weaponsData[0].weaponsLv[curentLv].costLvUnlock;
+            txtUpButShotgun.text = "Unlock Cost " + atributDataLv.WeaponsData[0].weaponsLv[curentLv].costLvUnlock;
             LvShotgun.text = "Lock";
         }
        }
 
        public void setFgText(int curentLv)
        {
-        if (ShopData.weaponsData[1].isUnlock){
-            FgInfoText.text = "Damage : "+ShopData.weaponsData[1].weaponsLv[curentLv].damage+"\nAttack Speed : "+ ShopData.weaponsData[1].weaponsLv[curentLv].atkSpeed;
+        if (MainData.MainData.lvAtribut[1].isUnlock){
+            FgInfoText.text = "Damage : "+atributDataLv.WeaponsData[1].weaponsLv[curentLv].damage+"\nAttack Speed : "+ atributDataLv.WeaponsData[1].weaponsLv[curentLv].atkSpeed;
             if(curentLv < 0)
             {
                 Debug.Log("curentLv out of range");
-            }else if(curentLv < ShopData.weaponsData[1].weaponsLv.Length - 1)
+            }else if(curentLv < atributDataLv.WeaponsData[1].weaponsLv.Length - 1)
             {
-                txtUpButFlamegun.text = "Upgrade Cost "+ShopData.weaponsData[1].weaponsLv[curentLv+1].costLvUnlock;
+                txtUpButFlamegun.text = "Upgrade Cost "+atributDataLv.WeaponsData[1].weaponsLv[curentLv+1].costLvUnlock;
                 LvFlamegun.text = "Level " + (curentLv + 1);
-            }else if(curentLv == ShopData.weaponsData[1].weaponsLv.Length - 1)
+            }else if(curentLv == atributDataLv.WeaponsData[1].weaponsLv.Length - 1)
             {
                 UpButFlamegun.interactable = false;
                 txtUpButFlamegun.text = "Max";
@@ -81,23 +86,23 @@ namespace ShopSystem
         }else 
         {
             FgInfoText.text = "(Lock)";
-            txtUpButFlamegun.text = "Unlock Cost " + ShopData.weaponsData[1].weaponsLv[curentLv].costLvUnlock;
+            txtUpButFlamegun.text = "Unlock Cost " + atributDataLv.WeaponsData[1].weaponsLv[curentLv].costLvUnlock;
             LvFlamegun.text = "Lock";
         }
        }
 
        public void setBzText(int curentLv)
        {
-        if (ShopData.weaponsData[2].isUnlock){
-            BzInfoText.text = "Damage : "+ShopData.weaponsData[2].weaponsLv[curentLv].damage+"\nAttack Speed : "+ ShopData.weaponsData[2].weaponsLv[curentLv].atkSpeed;
+        if (MainData.MainData.lvAtribut[2].isUnlock){
+            BzInfoText.text = "Damage : "+atributDataLv.WeaponsData[2].weaponsLv[curentLv].damage+"\nAttack Speed : "+ atributDataLv.WeaponsData[2].weaponsLv[curentLv].atkSpeed;
             if(curentLv < 0)
             {
                 Debug.Log("curentLv out of range");
-            }else if(curentLv < ShopData.weaponsData[2].weaponsLv.Length - 1)
+            }else if(curentLv < atributDataLv.WeaponsData[2].weaponsLv.Length - 1)
             {
-                txtUpButBazoka.text = "Upgrade Cost "+ShopData.weaponsData[2].weaponsLv[curentLv+1].costLvUnlock;
+                txtUpButBazoka.text = "Upgrade Cost "+atributDataLv.WeaponsData[2].weaponsLv[curentLv+1].costLvUnlock;
                 LvBazoka.text = "Level " + (curentLv + 1);
-            }else if(curentLv == ShopData.weaponsData[2].weaponsLv.Length - 1)
+            }else if(curentLv == atributDataLv.WeaponsData[2].weaponsLv.Length - 1)
             {
                 UpButBazoka.interactable = false;
                 txtUpButBazoka.text = "Max";
@@ -106,22 +111,22 @@ namespace ShopSystem
         }else 
         {
             BzInfoText.text = "(Lock)";
-            txtUpButBazoka.text = "Unlock Cost " + ShopData.weaponsData[2].weaponsLv[curentLv].costLvUnlock;
+            txtUpButBazoka.text = "Unlock Cost " + atributDataLv.WeaponsData[2].weaponsLv[curentLv].costLvUnlock;
             LvBazoka.text = "Lock";
         }
        }
 
        public void setArmorText(int curentLv)
        {
-            ArmorInfoText.text = "Defence : "+ShopData.playerAttributeData[0].AttributeLv[curentLv].Amount;
+            ArmorInfoText.text = "Defence : "+atributDataLv.PlayerAtteributeData[1].AttributeLv[curentLv].Amount;
             if(curentLv < 0)
             {
                 Debug.Log("curentLv out of range");
-            }else if(curentLv < ShopData.playerAttributeData[0].AttributeLv.Length - 1)
+            }else if(curentLv < atributDataLv.PlayerAtteributeData[1].AttributeLv.Length - 1)
             {
-                txtUpButArmor.text = "Upgrade Cost "+ShopData.playerAttributeData[0].AttributeLv[curentLv+1].costLvUnlock;
+                txtUpButArmor.text = "Upgrade Cost "+atributDataLv.PlayerAtteributeData[1].AttributeLv[curentLv+1].costLvUnlock;
                 LvArmor.text = "Level " + (curentLv + 1);
-            }else if(curentLv == ShopData.playerAttributeData[0].AttributeLv.Length - 1)
+            }else if(curentLv == atributDataLv.PlayerAtteributeData[1].AttributeLv.Length - 1)
             {
                 UpButArmor.interactable = false;
                 txtUpButArmor.text = "Max";
@@ -131,15 +136,15 @@ namespace ShopSystem
 
        public void setHpText(int curentLv)
        {
-            HpInfoText.text = "Max Hp : "+ShopData.playerAttributeData[1].AttributeLv[curentLv].Amount;
+            HpInfoText.text = "Max Hp : "+atributDataLv.PlayerAtteributeData[0].AttributeLv[curentLv].Amount;
             if(curentLv < 0)
             {
                 Debug.Log("curentLv out of range");
-            }else if(curentLv < ShopData.playerAttributeData[1].AttributeLv.Length - 1)
+            }else if(curentLv < atributDataLv.PlayerAtteributeData[0].AttributeLv.Length - 1)
             {
-                txtUpButHp.text = "Upgrade Cost "+ShopData.playerAttributeData[1].AttributeLv[curentLv+1].costLvUnlock;
+                txtUpButHp.text = "Upgrade Cost "+atributDataLv.PlayerAtteributeData[0].AttributeLv[curentLv+1].costLvUnlock;
                 LvHp.text = "Level " + (curentLv + 1);
-            }else if(curentLv == ShopData.playerAttributeData[1].AttributeLv.Length - 1)
+            }else if(curentLv == atributDataLv.PlayerAtteributeData[0].AttributeLv.Length - 1)
             {
                 UpButHp.interactable = false;
                 txtUpButHp.text = "Max";

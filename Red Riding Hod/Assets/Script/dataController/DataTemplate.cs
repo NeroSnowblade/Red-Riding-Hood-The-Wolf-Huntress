@@ -16,6 +16,8 @@ namespace SystemDataLoad
         public string namaFileJson;
         public Waktu waktuMain;
         public bool isEmpety;
+        public int unlockLvRegion;
+        public int unlockStage;
     }
     [System.Serializable]
     public class Waktu // format penyimpanan waktu
@@ -30,20 +32,22 @@ namespace SystemDataLoad
     {
         public int totalGold;
         public int unlockLvRegion;
-        public int lvSg;
-        public int lvFg;
-        public int lvBz;
-        public int lvHp;
-        public int lvArmor;
+        public int unlockStage;
+        public lvAtribut[] lvAtribut;
     }
 
     [System.Serializable]
-    public class WeaponsDataTemplate // untuk menyimpan data setap lv dari weapon (data tidak dapat di ubah in game)
+    public class lvAtribut
+    {
+        public string nama;
+        public int lv;
+        public bool isUnlock;
+    }
+
+    [System.Serializable]
+    public class WeaponsDataTemplate// untuk menyimpan data setap lv dari weapon (data tidak dapat di ubah in game)
     {
         public string name;
-        public bool isUnlock;
-        public int unlockCost;
-        public int unlockLv;
         public WeaponsLv[] weaponsLv;
     }
 
@@ -59,8 +63,6 @@ namespace SystemDataLoad
     public class PlayerAtteributeDataTemplate // untuk menyimpan data setap lv dari atribut player (data tidak dapat di ubah in game)
     {
         public string name;
-        public int unlockCost;
-        public int unlockLv;
         public PlayerAttributeLv[] AttributeLv;
     }
 

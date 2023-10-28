@@ -7,20 +7,21 @@ public class SaveLoadMainData : MonoBehaviour
 {
     public SaveLoadDataSlot SavedDataSlot;
     public MainDataTemplate MainData;
+    public int Index;
 
-    public void InitializedMainData(int Index)
+    public void InitializedMainData()
     {
-
-        //clearMainData(Index);
+        Index = SaveLoadDataSlot.StaticIndexUsed;
+        //clearMainData();
         if(!SavedDataSlot.DataSlot.DataSlot[Index].isEmpety){
-            loadMainData(Index);
+            loadMainData();
         }else{
-            saveMainData(Index);
+            saveMainData();
             SavedDataSlot.DataSlot.DataSlot[Index].isEmpety = false;
             SavedDataSlot.saveDataSlot();
         }
     }
-    public void saveMainData(int Index)
+    public void saveMainData()
     {
         string MainDataString = JsonUtility.ToJson(MainData);
         try
@@ -35,7 +36,7 @@ public class SaveLoadMainData : MonoBehaviour
         }
 
     }
-    public void loadMainData(int Index)
+    public void loadMainData()
     {
         try
         {
@@ -51,7 +52,7 @@ public class SaveLoadMainData : MonoBehaviour
         }
 
     }
-    public void clearData(int Index)
+    public void clearData()
     {
         SavedDataSlot.DataSlot.DataSlot[Index].isEmpety = true;
         SavedDataSlot.saveDataSlot();

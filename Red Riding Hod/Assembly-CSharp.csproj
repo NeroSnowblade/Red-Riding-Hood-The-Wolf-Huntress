@@ -51,9 +51,11 @@
      <Compile Include="Assets\Script\sceneController\MenuScript.cs" />
      <Compile Include="Assets\Script\sceneController\MainMenu.cs" />
      <Compile Include="Assets\Script\shopButtonController.cs" />
+     <Compile Include="Assets\Script\LoadMenuButtonController.cs" />
      <Compile Include="Assets\Script\scytheController.cs" />
      <Compile Include="Assets\Script\dataController\DataTemplate.cs" />
      <Compile Include="Assets\Script\Sound.cs" />
+     <Compile Include="Assets\Script\ui\LoadMenuUIController.cs" />
      <Compile Include="Assets\Script\ui\GameOverUIController.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
      <Compile Include="Assets\Script\AttackArea.cs" />
@@ -68,8 +70,10 @@
      <Compile Include="Assets\Script\ui\ShopUITextItemController.cs" />
      <Compile Include="Assets\Script\scriptCobaWave\spawnWaveControler.cs" />
      <Compile Include="Assets\Script\ui\shopIUController.cs" />
+     <Compile Include="Assets\Script\dataController\DataShopController.cs" />
      <Compile Include="Assets\Script\ShopData.cs" />
      <Compile Include="Assets\Script\sceneController\SettingMenuControl.cs" />
+     <Compile Include="Assets\Script\dataController\SciptableAtribut.cs" />
      <Compile Include="Assets\Script\ui\goldUiController.cs" />
      <Compile Include="Assets\Script\ui\EnemyUiController.cs" />
      <Compile Include="Assets\Script\playerController.cs" />

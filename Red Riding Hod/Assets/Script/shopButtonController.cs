@@ -8,7 +8,8 @@ namespace ShopSystem
    public class shopButtonController : MonoBehaviour
    { 
     public shopIUController uiShop;
-    public SaveLoadData SaveLoadData;
+    public SaveLoadMainData MainData;
+    public SciptableAtribut AtributData;
     public Button UpButShotgun,UpButFlamegun,UpButBazoka,UpButArmor,UpButHp;
 
     public int totalCoints;
@@ -16,110 +17,121 @@ namespace ShopSystem
 
     void Start()
     {
-      totalCoints = 200;
+      totalCoints = MainData.MainData.totalGold;
       uiShop.setTotalCointText(totalCoints);
 
-      curentLvSg = uiShop.ShopData.weaponsData[0].unlockLv;
+      curentLvSg = MainData.MainData.lvAtribut[0].lv;
+      curentLvFg = MainData.MainData.lvAtribut[1].lv;
+      curentLvBz = MainData.MainData.lvAtribut[2].lv;
+      curentLvHp = MainData.MainData.lvAtribut[3].lv;
+      curentLvArmor = MainData.MainData.lvAtribut[4].lv;
     }
 
     public void ButtonSgUPMethod(){
-         if(uiShop.ShopData.weaponsData[0].isUnlock)
+         if(MainData.MainData.lvAtribut[0].isUnlock)
          {
-            if(totalCoints >= uiShop.ShopData.weaponsData[0].weaponsLv[curentLvSg+1].costLvUnlock)
+            if(totalCoints >= AtributData.WeaponsData[0].weaponsLv[curentLvSg+1].costLvUnlock)
             {
-            totalCoints -= uiShop.ShopData.weaponsData[0].weaponsLv[curentLvSg+1].costLvUnlock;
-            uiShop.ShopData.weaponsData[0].unlockLv += 1;
-            curentLvSg = uiShop.ShopData.weaponsData[0].unlockLv;
+            totalCoints -= AtributData.WeaponsData[0].weaponsLv[curentLvSg+1].costLvUnlock;
+            MainData.MainData.lvAtribut[0].lv += 1;
+            curentLvSg = MainData.MainData.lvAtribut[0].lv;
             }
          }else
          {
-            if(totalCoints >= uiShop.ShopData.weaponsData[0].weaponsLv[curentLvSg].costLvUnlock)
+            if(totalCoints >= AtributData.WeaponsData[0].weaponsLv[curentLvSg].costLvUnlock)
             {
-            totalCoints -= uiShop.ShopData.weaponsData[0].weaponsLv[curentLvSg].costLvUnlock;
-            uiShop.ShopData.weaponsData[0].isUnlock = true;
+            totalCoints -= AtributData.WeaponsData[0].weaponsLv[curentLvSg+1].costLvUnlock;
+            MainData.MainData.lvAtribut[0].isUnlock = true;
             }
          }
 
+         MainData.MainData.totalGold = totalCoints;
          uiShop.setTotalCointText(totalCoints);
          uiShop.setSgText(curentLvSg);
 #if UNITY_EDITOR
-         SaveLoadData.saveData();
+         MainData.saveMainData();
 #endif
       }
 
     public void ButtonFgUPMethod(){
-      if(uiShop.ShopData.weaponsData[1].isUnlock)
+      if(MainData.MainData.lvAtribut[1].isUnlock)
       {
-         if(totalCoints >= uiShop.ShopData.weaponsData[1].weaponsLv[curentLvFg+1].costLvUnlock)
+         if(totalCoints >= AtributData.WeaponsData[1].weaponsLv[curentLvFg+1].costLvUnlock)
          {
-            totalCoints -= uiShop.ShopData.weaponsData[1].weaponsLv[curentLvFg+1].costLvUnlock;
-            uiShop.ShopData.weaponsData[1].unlockLv += 1;
-            curentLvFg = uiShop.ShopData.weaponsData[1].unlockLv;
+            totalCoints -= AtributData.WeaponsData[1].weaponsLv[curentLvFg+1].costLvUnlock;
+            MainData.MainData.lvAtribut[1].lv += 1;
+            curentLvFg = MainData.MainData.lvAtribut[1].lv;
          }
       }else
       {
-         if(totalCoints >= uiShop.ShopData.weaponsData[1].weaponsLv[curentLvFg].costLvUnlock)
+         if(totalCoints >= AtributData.WeaponsData[1].weaponsLv[curentLvFg].costLvUnlock)
          {
-            totalCoints -= uiShop.ShopData.weaponsData[1].weaponsLv[curentLvFg].costLvUnlock;
-            uiShop.ShopData.weaponsData[1].isUnlock = true;
+            totalCoints -= AtributData.WeaponsData[1].weaponsLv[curentLvFg].costLvUnlock;
+            MainData.MainData.lvAtribut[1].isUnlock = true;
          }
       }
+
+      MainData.MainData.totalGold = totalCoints;
       uiShop.setTotalCointText(totalCoints);
       uiShop.setFgText(curentLvFg);
 #if UNITY_EDITOR
-         SaveLoadData.saveData();
+         MainData.saveMainData();
 #endif
     }
 
     public void ButtonBzUPMethod(){
-      if(uiShop.ShopData.weaponsData[2].isUnlock)
+      if(MainData.MainData.lvAtribut[2].isUnlock)
       {
-         if(totalCoints >= uiShop.ShopData.weaponsData[2].weaponsLv[curentLvBz+1].costLvUnlock)
+         if(totalCoints >= AtributData.WeaponsData[2].weaponsLv[curentLvBz+1].costLvUnlock)
          {
-            totalCoints -= uiShop.ShopData.weaponsData[2].weaponsLv[curentLvBz+1].costLvUnlock;
-            uiShop.ShopData.weaponsData[2].unlockLv += 1;
-            curentLvBz = uiShop.ShopData.weaponsData[2].unlockLv;
+            totalCoints -= AtributData.WeaponsData[2].weaponsLv[curentLvBz+1].costLvUnlock;
+            MainData.MainData.lvAtribut[2].lv += 1;
+            curentLvBz = MainData.MainData.lvAtribut[2].lv;
          }
       }else
       {
-         if(totalCoints >= uiShop.ShopData.weaponsData[2].weaponsLv[curentLvBz].costLvUnlock)
+         if(totalCoints >= AtributData.WeaponsData[2].weaponsLv[curentLvBz].costLvUnlock)
          {
-            totalCoints -= uiShop.ShopData.weaponsData[2].weaponsLv[curentLvBz].costLvUnlock;
-            uiShop.ShopData.weaponsData[2].isUnlock = true;
+            totalCoints -= AtributData.WeaponsData[2].weaponsLv[curentLvBz].costLvUnlock;
+            MainData.MainData.lvAtribut[2].isUnlock = true;
          }
       }
+
+      MainData.MainData.totalGold = totalCoints;
       uiShop.setTotalCointText(totalCoints);
       uiShop.setBzText(curentLvBz);
 #if UNITY_EDITOR
-         SaveLoadData.saveData();
+         MainData.saveMainData();
 #endif
     }
 
     public void ButtonArmorUPMethod(){
-      if(totalCoints >= uiShop.ShopData.playerAttributeData[0].AttributeLv[curentLvArmor+1].costLvUnlock)
+      if(totalCoints >= AtributData.PlayerAtteributeData[0].AttributeLv[curentLvArmor+1].costLvUnlock)
       {
-         totalCoints -= uiShop.ShopData.playerAttributeData[0].AttributeLv[curentLvArmor+1].costLvUnlock;
-         uiShop.ShopData.playerAttributeData[0].unlockLv += 1;
-         curentLvArmor = uiShop.ShopData.playerAttributeData[0].unlockLv;
+         totalCoints -= AtributData.PlayerAtteributeData[0].AttributeLv[curentLvArmor+1].costLvUnlock;
+         MainData.MainData.lvAtribut[3].lv += 1;
+         curentLvArmor = MainData.MainData.lvAtribut[0].lv;
+         MainData.MainData.totalGold = totalCoints;
          uiShop.setTotalCointText(totalCoints);
          uiShop.setArmorText(curentLvArmor);
       }
 #if UNITY_EDITOR
-         SaveLoadData.saveData();
+         MainData.saveMainData();
 #endif
     }
 
     public void ButtonHpUPMethod(){
-      if(totalCoints >= uiShop.ShopData.playerAttributeData[1].AttributeLv[curentLvHp+1].costLvUnlock)
+      if(totalCoints >= AtributData.PlayerAtteributeData[1].AttributeLv[curentLvHp+1].costLvUnlock)
       {
-         totalCoints -= uiShop.ShopData.playerAttributeData[1].AttributeLv[curentLvHp+1].costLvUnlock;
-         uiShop.ShopData.playerAttributeData[1].unlockLv += 1;
-         curentLvHp = uiShop.ShopData.playerAttributeData[1].unlockLv;
+         totalCoints -= AtributData.PlayerAtteributeData[1].AttributeLv[curentLvHp+1].costLvUnlock;
+         MainData.MainData.lvAtribut[4].lv += 1;
+         curentLvHp = MainData.MainData.lvAtribut[4].lv;
+         MainData.MainData.totalGold = totalCoints;
          uiShop.setTotalCointText(totalCoints);
          uiShop.setHpText(curentLvHp);
       }
 #if UNITY_EDITOR
-      SaveLoadData.saveData();
+      MainData.saveMainData();
 #endif
     }
    }

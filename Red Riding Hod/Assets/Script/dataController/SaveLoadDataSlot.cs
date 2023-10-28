@@ -7,6 +7,7 @@ using SystemDataLoad;
 public class SaveLoadDataSlot : MonoBehaviour
 {
     public DataSlotTemplate DataSlot;
+    public static int StaticIndexUsed;
 
     public void InitializedDataSlot()
     {

@@ -14,4 +14,8 @@ public class sceneControler : MonoBehaviour
     public void toShop(){
         SceneManager.LoadScene("mainShop");
     }
+    public void toLoadMenu()
+    {
+        SceneManager.LoadScene("LoadMenu");
+    }
 }
