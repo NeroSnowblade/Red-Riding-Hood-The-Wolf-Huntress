@@ -19,6 +19,7 @@ public class MenuScript : MonoBehaviour
         audioManager.PlaySound("BackSound");
     }
 
+
     public void StartGame()
     {
         audioManager.PlaySound("Klik");

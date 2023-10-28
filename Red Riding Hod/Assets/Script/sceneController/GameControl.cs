@@ -15,6 +15,8 @@ public class GameControl : MonoBehaviour
 
 
 
+
+
     public void ShowSettingPanel()
     {
         SetUI.SetActive(true);
@@ -56,6 +58,7 @@ public class GameControl : MonoBehaviour
         Time.timeScale = 0f;
         audioManager.PlaySound("Klik");
     }
+
 
     public void Resume()
     {
