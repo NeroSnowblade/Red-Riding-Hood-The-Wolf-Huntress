@@ -10,17 +10,12 @@ public class ArenaManager : MonoBehaviour
     private AudioManager audioManager;
     public GameObject SetUI;
 
-    public void OpenLevel(int levelId)
-    {
-        string levelName = "region1Lv " + levelId;
-        SceneManager.LoadScene(levelName);
-    }
-
     public void HideMainPanel()
     {
         SetUI.SetActive(false);
         audioManager.PlaySound("Klik");
     }
+
     // Start is called before the first frame update
     void Start()
     {

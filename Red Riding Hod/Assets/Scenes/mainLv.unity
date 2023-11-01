@@ -1791,7 +1791,6 @@ GameObject:
   - component: {fileID: 790748054}
   - component: {fileID: 790748056}
   - component: {fileID: 790748055}
-  - component: {fileID: 790748057}
   m_Layer: 5
   m_Name: PagesRegion
   m_TagString: Untagged
@@ -1861,23 +1860,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &790748057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790748053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65951498194c3946bb4375df6e76dda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 1036892114}
-  - {fileID: 2089892888}
-  - {fileID: 959387139}
-  - {fileID: 1229256788}
 --- !u!1 &795350911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,8 +2669,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014453559}
-        m_TargetAssemblyTypeName: ArenaManager, Assembly-CSharp
+      - m_Target: {fileID: 1132588620}
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
         m_MethodName: OpenLevel
         m_Mode: 3
         m_Arguments:
@@ -3037,8 +3019,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014453559}
-        m_TargetAssemblyTypeName: ArenaManager, Assembly-CSharp
+      - m_Target: {fileID: 1132588620}
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
         m_MethodName: OpenLevel
         m_Mode: 3
         m_Arguments:
@@ -3209,6 +3191,7 @@ GameObject:
   - component: {fileID: 1132588616}
   - component: {fileID: 1132588618}
   - component: {fileID: 1132588619}
+  - component: {fileID: 1132588620}
   m_Layer: 5
   m_Name: Region1
   m_TagString: Untagged
@@ -3274,6 +3257,20 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &1132588620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132588615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65951498194c3946bb4375df6e76dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  levelButtons: {fileID: 1132588615}
 --- !u!1 &1147934141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,8 +3769,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014453559}
-        m_TargetAssemblyTypeName: ArenaManager, Assembly-CSharp
+      - m_Target: {fileID: 1132588620}
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
         m_MethodName: OpenLevel
         m_Mode: 3
         m_Arguments:
@@ -5056,6 +5053,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  levelButtons: {fileID: 0}
 --- !u!114 &1832593638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5473,8 +5471,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014453559}
-        m_TargetAssemblyTypeName: ArenaManager, Assembly-CSharp
+      - m_Target: {fileID: 1132588620}
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
         m_MethodName: OpenLevel
         m_Mode: 3
         m_Arguments:
