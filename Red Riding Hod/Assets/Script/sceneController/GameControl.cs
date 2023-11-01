@@ -25,7 +25,6 @@ public class GameControl : MonoBehaviour
         audioManager.PlaySound("Klik");
     }
 
-
     void GameStart()
     {
         Time.timeScale = 1f;
@@ -66,6 +65,7 @@ public class GameControl : MonoBehaviour
 
     public void Restart()
     {
+        pauseUI.SetActive(false);
         GameStart();
         SceneManager.LoadScene(sceneName);
         audioManager.PlaySound("Klik");
@@ -92,14 +92,15 @@ public class GameControl : MonoBehaviour
         audioManager.PlaySound("Klik");
     }
 
+
     public void ToNewLevel(int levelId)
     {
-        /*if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
         {
             PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
             PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
             PlayerPrefs.Save();
-        }*/
+        }
         
         string levelName = "region1Lv " + levelId;
         SceneManager.LoadScene(levelName);
