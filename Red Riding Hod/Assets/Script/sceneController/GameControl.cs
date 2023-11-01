@@ -13,8 +13,6 @@ public class GameControl : MonoBehaviour
     private AudioManager audioManager;
     public GameObject SetUI;
 
-
-
     public void ShowSettingPanel()
     {
         SetUI.SetActive(true);
