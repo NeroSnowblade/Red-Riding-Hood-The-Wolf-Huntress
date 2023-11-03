@@ -24,11 +24,22 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-    public void OpenLevel(int levelId)
+    public void OpenLevelReg1(int levelId)
     {
         string levelName = "region1Lv " + levelId;
         SceneManager.LoadScene(levelName);
     }
+    public void OpenLevelReg2(int levelId)
+    {
+        string levelName = "region2Lv " + levelId;
+        SceneManager.LoadScene(levelName);
+    }
+    public void OpenLevelReg3(int levelId)
+    {
+        string levelName = "region3Lv " + levelId;
+        SceneManager.LoadScene(levelName);
+    }
+
 
     void ButtonsToArray()
     {

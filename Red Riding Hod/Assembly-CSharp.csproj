@@ -92,6 +92,7 @@
     <Compile Include="Assets\LeanTween\Testing\TestingSequencer.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
     <Compile Include="Assets\Script\bulletController.cs" />
+    <Compile Include="Assets\Script\SelfRotator.cs" />
     <Compile Include="Assets\LeanTween\Testing\PerformanceTests.cs" />
     <Compile Include="Assets\Script\AttackArea.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\LogoCinematic.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\Script\spawnController.cs" />
     <Compile Include="Assets\Script\sceneController\sceneControler.cs" />
+    <Compile Include="Assets\Script\regionscript\ScrollTexture.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingSceneSwitching.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing246.cs" />
