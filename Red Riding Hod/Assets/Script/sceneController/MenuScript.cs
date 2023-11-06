@@ -24,6 +24,13 @@ public class MenuScript : MonoBehaviour
         audioManager.PlaySound("Klik");
         SceneManager.LoadScene("mainLv");
     }
+
+    public void Settings()
+    {
+        audioManager.PlaySound("Klik");
+        SceneManager.LoadScene("Settings");
+    }
+
     public void ExitGame()
     {
         audioManager.PlaySound("Klik");

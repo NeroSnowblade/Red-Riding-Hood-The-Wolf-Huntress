@@ -54,10 +54,10 @@ public class playerController : MonoBehaviour
     // fungsi player Attak
     void playerAttack()
     {
-        audioManager.PlaySound("Shoot");
         if (Input.GetMouseButtonDown(0))
         { // mengetahui jika mouse di tekan ke bawah
             isAttack = true;
+            audioManager.PlaySound("Shoot");
         }
         if (isAttack)
         {

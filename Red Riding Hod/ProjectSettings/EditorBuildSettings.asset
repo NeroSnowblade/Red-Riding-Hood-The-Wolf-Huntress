@@ -12,15 +12,48 @@ EditorBuildSettings:
     path: Assets/Scenes/mainLv.unity
     guid: 970937e8b6258094e8f013d0fc1a3b79
   - enabled: 1
-    path: Assets/Scenes/region1/region1Lv1.unity
+    path: Assets/Scenes/Map Arena/Region 1/region1Lv 1.unity
     guid: ae449237f35b92a499a4dbfc0fb64f9c
   - enabled: 1
-    path: Assets/Scenes/region1/region1Lv2.unity
+    path: Assets/Scenes/Map Arena/Region 1/region1Lv 2.unity
     guid: 9bafeac9df4a0894dad29d236691bb86
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 1/region1Lv 3.unity
+    guid: b5babc5eb5a084a4f91611f97109ecf6
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 1/region1Lv 4.unity
+    guid: 8a39ccd032631eb44ad17211c91524dd
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 2/region2Lv 1.unity
+    guid: 311a55e085b67684091fd868675ddbbb
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 2/region2Lv 2.unity
+    guid: 07237cfebfc77b341b51d1498bccbac8
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 2/region2Lv 3.unity
+    guid: 9bd655b8e6ac72e41a784a8474f3708c
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 2/region2Lv 4.unity
+    guid: 621bab146620e8e458db752e05162f44
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 2/region2Lv 5.unity
+    guid: fdc3dffbd433db542a09f2d6f165f323
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 3/region3Lv 1.unity
+    guid: e07a97120283a984eb7a0d88fec201c0
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 3/region3Lv 2.unity
+    guid: fe3548a9539ea554b91fd88cd8235648
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 3/region3Lv 3.unity
+    guid: 2e807b3bcebc6df4ebc81787e617cda7
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 3/region3Lv 4.unity
+    guid: f615815907548b94f82f453cdcac2f0f
+  - enabled: 1
+    path: Assets/Scenes/Map Arena/Region 3/region3Lv 5.unity
+    guid: b9a1c296a28be8d44aff10a7714d79da
   - enabled: 1
     path: Assets/Scenes/mainShop.unity
     guid: 720cce94e474df942b9e41f907a53034
-  - enabled: 1
-    path: Assets/Scenes/LoadMenu.unity
-    guid: 4b91518a62fdb56479ad49023f333396
   m_configObjects: {}
