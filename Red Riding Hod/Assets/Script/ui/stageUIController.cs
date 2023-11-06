@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class stageUIController : MonoBehaviour
+
+public class InGameUIController : MonoBehaviour
 {
     public GameObject panelComplite;
     public TMP_Text JumlahCoin;
@@ -17,3 +18,4 @@ public class stageUIController : MonoBehaviour
     }
     
 }
+
