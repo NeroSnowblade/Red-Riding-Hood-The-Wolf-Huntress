@@ -54,6 +54,7 @@ public class GameControl : MonoBehaviour
         audioManager.PlaySound("Klik");
     }
 
+
     public void Resume()
     {
         pauseUI.SetActive(false);

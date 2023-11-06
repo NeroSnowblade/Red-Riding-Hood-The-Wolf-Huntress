@@ -61,6 +61,7 @@ public class playerController : MonoBehaviour
         }
         if (isAttack)
         {
+            audioManager.PlaySound("Shoot");
             for (int i = -2; i < 2; i++)
             {
                 var bullet = Instantiate(bulletPV, bulletSP.position, bulletSP.rotation);//belum jadi
@@ -111,4 +112,6 @@ public class playerController : MonoBehaviour
             isFacing = false;
         }
     }
+
+
 }
