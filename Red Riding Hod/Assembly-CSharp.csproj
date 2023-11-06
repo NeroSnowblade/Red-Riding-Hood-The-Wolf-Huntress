@@ -42,32 +42,35 @@
   <ItemGroup>
      <Compile Include="Assets\Script\enemyMovement.cs" />
      <Compile Include="Assets\Script\playerAtribut.cs" />
-     <Compile Include="Assets\Script\sceneController\Setting.cs" />
      <Compile Include="Assets\Script\enemyAtribut.cs" />
-     <Compile Include="Assets\Script\sceneController\GameControl.cs" />
-     <Compile Include="Assets\Script\sceneController\MenuScript.cs" />
+     <Compile Include="Assets\Script\regionscript\FireballSpawn.cs" />
      <Compile Include="Assets\Script\sceneController\MainMenu.cs" />
      <Compile Include="Assets\Script\scytheController.cs" />
-     <Compile Include="Assets\Script\Sound.cs" />
-     <Compile Include="Assets\Script\ui\GameOverUIController.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
-     <Compile Include="Assets\Script\SelfRotator.cs" />
-     <Compile Include="Assets\Script\AttackArea.cs" />
      <Compile Include="Assets\Script\AudioManager.cs" />
      <Compile Include="Assets\Script\spawnController.cs" />
-     <Compile Include="Assets\Script\sceneController\sceneControler.cs" />
      <Compile Include="Assets\Script\regionscript\ScrollTexture.cs" />
-     <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\Script\ui\waveUIController.cs" />
-     <Compile Include="Assets\Script\EnemyAttack.cs" />
      <Compile Include="Assets\Script\healthPlayerControllerUi.cs" />
-     <Compile Include="Assets\Script\scriptCobaWave\spawnWaveControler.cs" />
+     <Compile Include="Assets\Script\regionscript\controlfireball.cs" />
+     <Compile Include="Assets\Script\regionscript\fireballs.cs" />
      <Compile Include="Assets\Script\sceneController\SettingMenuControl.cs" />
      <Compile Include="Assets\Script\ui\goldUiController.cs" />
      <Compile Include="Assets\Script\ui\EnemyUiController.cs" />
+     <Compile Include="Assets\Script\sceneController\ArenaManager.cs" />
+     <Compile Include="Assets\Script\sceneController\Setting.cs" />
+     <Compile Include="Assets\Script\sceneController\GameControl.cs" />
+     <Compile Include="Assets\Script\sceneController\MenuScript.cs" />
+     <Compile Include="Assets\Script\Sound.cs" />
+     <Compile Include="Assets\Script\ui\GameOverUIController.cs" />
+     <Compile Include="Assets\Script\SelfRotator.cs" />
+     <Compile Include="Assets\Script\AttackArea.cs" />
+     <Compile Include="Assets\Script\sceneController\sceneControler.cs" />
+     <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Script\ui\waveUIController.cs" />
+     <Compile Include="Assets\Script\EnemyAttack.cs" />
+     <Compile Include="Assets\Script\scriptCobaWave\spawnWaveControler.cs" />
      <Compile Include="Assets\Script\stageUIController.cs" />
      <Compile Include="Assets\Script\playerController.cs" />
-     <Compile Include="Assets\Script\sceneController\ArenaManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -728,8 +731,20 @@
     <Reference Include="Unity.EditorCoroutines.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
@@ -743,9 +758,6 @@
     <Reference Include="Unity.ShaderGraph.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Recorder.Base">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
@@ -755,8 +767,8 @@
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    <Reference Include="Unity.VisualStudio.Editor">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
@@ -764,14 +776,29 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -797,14 +824,23 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="PPv2URPConverters">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
@@ -814,6 +850,9 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+        <HintPath>E:\Semester 7\stupen\contoh\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

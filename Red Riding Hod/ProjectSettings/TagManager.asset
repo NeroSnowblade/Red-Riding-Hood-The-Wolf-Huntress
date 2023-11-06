@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Scythe
   - Ground
+  - wall
+  - player
   layers:
   - Default
   - TransparentFX
