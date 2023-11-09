@@ -9,7 +9,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     Sound[] sounds;
 
-
     private void Awake()
     {
         foreach (Sound s in sounds)
@@ -20,13 +19,16 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.loop = s.loop;
         }
+
         if (instance != null)
         {
             Debug.LogWarning("Lebih dari satu audio manager di scene");
         }
+
         else
         {
             instance = this;
+            //DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -41,6 +43,7 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
     public void StopSound(string _name)
     {
         for (int i = 0; i < sounds.Length; i++)
@@ -51,16 +54,5 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

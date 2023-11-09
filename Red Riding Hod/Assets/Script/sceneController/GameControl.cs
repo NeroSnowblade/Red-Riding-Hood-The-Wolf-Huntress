@@ -92,7 +92,6 @@ public class GameControl : MonoBehaviour
         audioManager.PlaySound("Klik");
     }
 
-
     public void ToNewLevel(int levelId)
     {
         if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))

@@ -2303,6 +2303,11 @@ public class LTDescr
 
 		return this;
 	}
+
+    internal void setDelay()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 //}

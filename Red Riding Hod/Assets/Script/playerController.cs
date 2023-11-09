@@ -18,8 +18,9 @@ public class playerController : MonoBehaviour
 
     public Transform scytheSp;
     public GameObject scythePv;
-    //audio
-    private AudioManager audioManager;
+    private AudioManager audioManager; //audio
+
+    public float threshold;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,9 @@ public class playerController : MonoBehaviour
         rotateWepon();
         playerAttack();
         Facing();
+        RespawnPlayer();
     }
+
     // fungsi player Attak
     void playerAttack()
     {
@@ -59,6 +62,7 @@ public class playerController : MonoBehaviour
             isAttack = true;
             audioManager.PlaySound("Shoot");
         }
+
         if (isAttack)
         {
             for (int i = -2; i < 2; i++)
@@ -69,11 +73,13 @@ public class playerController : MonoBehaviour
                 bullet.transform.rotation = Quaternion.Euler(180 + rotz + (3f * i), 270, 0);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
             }
+
             PlayerMove(mousePosition);
             var Scythe = Instantiate(scythePv, scytheSp.position, Quaternion.identity);
             isAttack = false;
         }
     }
+
     // fungsi mengambil posisi mouse
     void getMousePosition()
     {
@@ -82,6 +88,7 @@ public class playerController : MonoBehaviour
         mousePosition = cam.ScreenToWorldPoint(mousePos);
         trMousePos.position = mousePosition;
     }
+
     //fungsi menggerakan player
     void PlayerMove(Vector3 mousePos)
     {
@@ -90,6 +97,7 @@ public class playerController : MonoBehaviour
         recoilPos = new Vector3(recoilPos.x, recoilPos.y, recoilPos.z).normalized; // membuat posisi recoilPos menjadi antara -1 sampai 1
         rbPlayer.AddForce(new Vector3(recoilPos.x, recoilPos.y, 0) * -recoil, ForceMode.VelocityChange); // memberi gaya recoilPos pada object
     }
+
     // fungsi rotasi senjata
     void rotateWepon()
     {
@@ -97,6 +105,7 @@ public class playerController : MonoBehaviour
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
         rotpoint.transform.rotation = Quaternion.Euler(0, 0, rotz);//membuat rotasi objek sesuai sudud variable rotz
     }
+
     // facing
     void Facing()
     {
@@ -105,10 +114,21 @@ public class playerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
             isFacing = true;
         }
+
         if (mousePosition.x - transform.position.x > 0 && isFacing)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             isFacing = false;
+        }
+    }
+
+    //respawn player
+    void RespawnPlayer()
+    {
+        threshold = -10;
+        if(transform.position.y < threshold)
+        {
+            transform.position = new Vector3(0f, 4f, 0f);
         }
     }
 }

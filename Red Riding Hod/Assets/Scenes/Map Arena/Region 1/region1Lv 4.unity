@@ -956,6 +956,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   scytheSp: {fileID: 1495009352}
   scythePv: {fileID: 3459911789739034942, guid: 426b39a9bd82d3841bb642dce43e8ac4, type: 3}
+  threshold: -10
 --- !u!136 &227465254
 CapsuleCollider:
   m_ObjectHideFlags: 0

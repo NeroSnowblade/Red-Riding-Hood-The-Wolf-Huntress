@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SwipeController : MonoBehaviour
+public class SwipeController : MonoBehaviour, IEndDragHandler
 {
     [SerializeField] int maxPage;
     int currentPage;
@@ -12,11 +13,13 @@ public class SwipeController : MonoBehaviour
 
     [SerializeField] float tweenTime;
     [SerializeField] LeanTweenType tweenType;
+    float dragThreshould;
 
     private void Awake()
     {
         currentPage = 1;
         targetPos = levelPagesRect.localPosition;
+        dragThreshould = Screen.width / 15;
     }
 
 
@@ -43,5 +46,19 @@ public class SwipeController : MonoBehaviour
     void MovePage()
     {
         levelPagesRect.LeanMoveLocal(targetPos, tweenTime).setEase(tweenType);
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if(Mathf.Abs(eventData.position.x - eventData.pressPosition.x) > dragThreshould)
+        {
+            if (eventData.position.x > eventData.pressPosition.x) Previous();
+            else Next();
+        }
+
+        else
+        {
+            MovePage();
+        }
     }
 }

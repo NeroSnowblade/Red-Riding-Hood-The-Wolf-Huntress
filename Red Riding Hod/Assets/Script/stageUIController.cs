@@ -9,7 +9,6 @@ public class stageUIController : MonoBehaviour
     public GameObject panelComplite;
     public TMP_Text JumlahCoin;
     
-
     public void PanelCompliteOn(string amount)
     {
         panelComplite.SetActive(true);
