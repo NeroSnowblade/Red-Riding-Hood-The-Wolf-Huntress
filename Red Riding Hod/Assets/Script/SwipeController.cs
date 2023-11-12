@@ -13,10 +13,13 @@ public class SwipeController : MonoBehaviour
     [SerializeField] float tweenTime;
     [SerializeField] LeanTweenType tweenType;
 
+    public StageUIController1 uiControl;
+
     private void Awake()
     {
         currentPage = 1;
         targetPos = levelPagesRect.localPosition;
+        uiControl.updateTextRegion(currentPage);
     }
 
 
@@ -27,6 +30,7 @@ public class SwipeController : MonoBehaviour
             currentPage++;
             targetPos += pageStep;
             MovePage();
+            uiControl.updateTextRegion(currentPage);
         }
     }
 
@@ -37,6 +41,7 @@ public class SwipeController : MonoBehaviour
             currentPage--;
             targetPos -= pageStep;
             MovePage();
+            uiControl.updateTextRegion(currentPage);
         }
     }
 

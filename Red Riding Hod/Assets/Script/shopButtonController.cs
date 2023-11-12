@@ -10,7 +10,11 @@ namespace ShopSystem
     public shopIUController uiShop;
     public SaveLoadMainData MainData;
     public SciptableAtribut AtributData;
+
+    public sceneControler sceneControler;
+
     public Button UpButShotgun,UpButFlamegun,UpButBazoka,UpButArmor,UpButHp;
+    public Button BtStart,BtStageMenu;
 
     public int totalCoints;
     public int curentLvSg,curentLvFg,curentLvBz,curentLvArmor,curentLvHp;
@@ -25,6 +29,8 @@ namespace ShopSystem
       curentLvBz = MainData.MainData.lvAtribut[2].lv;
       curentLvHp = MainData.MainData.lvAtribut[3].lv;
       curentLvArmor = MainData.MainData.lvAtribut[4].lv;
+
+      BtStart.onClick.AddListener(() => sceneControler.toGame(MainData.MainData.unlockLvRegion,MainData.MainData.unlockStage));
     }
 
     public void ButtonSgUPMethod(){

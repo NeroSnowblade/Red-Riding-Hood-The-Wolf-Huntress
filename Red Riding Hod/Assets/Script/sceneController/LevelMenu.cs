@@ -6,13 +6,19 @@ using UnityEngine.UI;
 
 public class LevelMenu : MonoBehaviour
 {
+    public int regionKe;
+    public int unlockedLevel;
     public Button[] buttons;
     public GameObject levelButtons;
+    public UIStageDatacontroller uiData;
 
     private void Awake()
     {
+        uiData.getData();
+        Debug.Log(regionKe);
+        Debug.Log("ini :"+ uiData.regionLv);
         ButtonsToArray();
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        unlockButton();
         for (int i = 0; i<buttons.Length; i++)
         {
             buttons[i].interactable = false;
@@ -24,21 +30,7 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-    public void OpenLevelReg1(int levelId)
-    {
-        string levelName = "region1Lv " + levelId;
-        SceneManager.LoadScene(levelName);
-    }
-    public void OpenLevelReg2(int levelId)
-    {
-        string levelName = "region2Lv " + levelId;
-        SceneManager.LoadScene(levelName);
-    }
-    public void OpenLevelReg3(int levelId)
-    {
-        string levelName = "region3Lv " + levelId;
-        SceneManager.LoadScene(levelName);
-    }
+
 
 
     void ButtonsToArray()
@@ -48,6 +40,15 @@ public class LevelMenu : MonoBehaviour
         for(int i = 0; i < childCount; i++)
         {
             buttons[i] = levelButtons.transform.GetChild(i).gameObject.GetComponent<Button>();
+        }
+    }
+
+    void unlockButton(){
+        if (regionKe <= uiData.regionLv){
+            unlockedLevel = uiData.stageLv -(5*(regionKe-1));
+        }
+        else{
+            unlockedLevel = 0;
         }
     }
 }

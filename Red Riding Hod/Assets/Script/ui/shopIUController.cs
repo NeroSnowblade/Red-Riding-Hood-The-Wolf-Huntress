@@ -118,7 +118,7 @@ namespace ShopSystem
 
        public void setArmorText(int curentLv)
        {
-            ArmorInfoText.text = "Defence : "+atributDataLv.PlayerAtteributeData[1].AttributeLv[curentLv].Amount;
+            ArmorInfoText.text = "Armor : "+atributDataLv.PlayerAtteributeData[1].AttributeLv[curentLv].Amount;
             if(curentLv < 0)
             {
                 Debug.Log("curentLv out of range");

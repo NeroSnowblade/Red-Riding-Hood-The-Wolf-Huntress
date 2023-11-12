@@ -15,27 +15,33 @@ public class spawnWaveControler : MonoBehaviour
         public int BonusGold;
         public float rate;
         public bool isWave;
+        public float timeBetweenWave;
     }
 
     public Wave[] waves;
     int nextWave = 0;
 
-    public float timeBetweenWave = 5f;
+    
     public float waveCountdown;
 
     public float SearchCountdown = 1f;
+    public int stageKe;
+    public bool isEnding;
 
     public spawnState state = spawnState.counting;
     public GameObject[] spawnPoints;
 
     public EnemyUiController enemyUI;
     public waveUIController waveUI;
-    public stageUIController stageUI;
+    public InGameUIComplitedController ComplitedUI;
     public goldUiController goldUI;
+
+    public DataInGameController dataController;
 
     void Start()
     {
-        waveCountdown = timeBetweenWave;
+        isEnding = false;
+        waveCountdown = waves[nextWave].timeBetweenWave;
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
         enemyUI = GameObject.Find("ui Enemy remaining").GetComponent<EnemyUiController>();
         waveUI = GameObject.Find("Wave Panel Controller").GetComponent<waveUIController>();
@@ -43,11 +49,13 @@ public class spawnWaveControler : MonoBehaviour
 
     void Update()
     {
-        if (state == spawnState.ending)
+        if (state == spawnState.ending && !isEnding)
         {
             Debug.Log("stage complite");
-            string gold = goldUI.getGold().ToString();
-            stageUI.PanelCompliteOn(gold);
+            int gold = goldUI.getGold();
+            ComplitedUI.PanelCompliteOn(gold);
+            dataController.saveDataInGame(gold,stageKe);
+            isEnding = true;
         }
         if(state == spawnState.waiting) // ketika state menunggu wave
         {
@@ -76,7 +84,7 @@ public class spawnWaveControler : MonoBehaviour
     IEnumerator SpawnWave(Wave _wave)
     {
         Debug.Log("is wave for "+ _wave.name);
-        waveUI.SetPanelWave(_wave.name,false,timeBetweenWave);
+        waveUI.SetPanelWave(_wave.name,false,waves[nextWave].timeBetweenWave);
         enemyUI.setBanyakEnemy(_wave.count);
         state = spawnState.spawning;
         for (int i = 0; i < _wave.count; i++) // looping spawn enemy
@@ -105,8 +113,8 @@ public class spawnWaveControler : MonoBehaviour
         }else{
             nextWave++; // next sesi
             state = spawnState.counting; // mengembalikan state ke counting
-            waveCountdown = timeBetweenWave; // mengembalikan countdown ke waktu tunggu wave
-            waveUI.SetPanelWave(waves[nextWave].name,waves[nextWave].isWave,timeBetweenWave); // munculin ui wave
+            waveCountdown = waves[nextWave].timeBetweenWave; // mengembalikan countdown ke waktu tunggu wave
+            waveUI.SetPanelWave(waves[nextWave].name,waves[nextWave].isWave,waves[nextWave].timeBetweenWave); // munculin ui wave
         }
 
     }

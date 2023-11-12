@@ -717,44 +717,38 @@
     <Reference Include="System.Xml.XPath.XDocument">
         <HintPath>C:\ProgramData\Unity\2022.3.7f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.TestRunner">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    <Reference Include="UnityEngine.TestRunner">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -762,23 +756,20 @@
     <Reference Include="Unity.VisualScripting.Shared.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    <Reference Include="Unity.ShaderGraph.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Base">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    <Reference Include="Unity.VisualStudio.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
@@ -786,8 +777,74 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
@@ -795,11 +852,8 @@
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
