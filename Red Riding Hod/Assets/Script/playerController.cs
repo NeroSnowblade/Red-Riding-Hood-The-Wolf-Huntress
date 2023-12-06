@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public bool isAttack;
+    public enum Attack{
+        attack,
+        cd,
+        ready,
+    };
+    public Attack attackState;
+    public float cdAttack;
     bool isFacing;
     Vector3 mousePosition;
     public float recoil;
@@ -20,6 +26,7 @@ public class playerController : MonoBehaviour
     public GameObject scythePv;
     //audio
     private AudioManager audioManager;
+    public playerAtribut atribut;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +38,12 @@ public class playerController : MonoBehaviour
             Debug.LogWarning("audio manager di temukan");
         }
 
-        isAttack = false;
+        attackState = Attack.ready;
         isFacing = false;
         bulletForce = 15f;
         recoil = 6f;
         rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
+        atribut = GameObject.Find("player").GetComponent<playerAtribut>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>(); // memasukan kamera
         rotpoint = GameObject.Find("rotasipoint").transform;
         trMousePos = GameObject.Find("mousePos").transform;
@@ -54,12 +62,12 @@ public class playerController : MonoBehaviour
     // fungsi player Attak
     void playerAttack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && attackState == Attack.ready)
         { // mengetahui jika mouse di tekan ke bawah
-            isAttack = true;
+            attackState = Attack.attack;
             audioManager.PlaySound("Shoot");
         }
-        if (isAttack)
+        if (attackState == Attack.attack)
         {
             audioManager.PlaySound("Shoot");
             for (int i = -2; i < 2; i++)
@@ -72,7 +80,11 @@ public class playerController : MonoBehaviour
             }
             PlayerMove(mousePosition);
             var Scythe = Instantiate(scythePv, scytheSp.position, Quaternion.identity);
-            isAttack = false;
+            cdAttack = 0.3f * 1/atribut.atkSpeed;
+            attackState = Attack.cd;
+        }
+        if(attackState == Attack.cd){
+            cdAtk();
         }
     }
     // fungsi mengambil posisi mouse
@@ -112,6 +124,13 @@ public class playerController : MonoBehaviour
             isFacing = false;
         }
     }
-
+    public void cdAtk(){
+        if(cdAttack <= 0){
+            attackState = Attack.ready;
+        }else{
+            cdAttack -= Time.deltaTime;
+            Debug.Log(cdAttack);
+        }
+    }
 
 }

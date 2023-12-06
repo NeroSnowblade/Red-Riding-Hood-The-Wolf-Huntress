@@ -17,12 +17,11 @@ public class DataInGameController : MonoBehaviour
     public SciptableAtribut atributDataLv;
 
     public int index;
-    public void Start()
-    {
-        index = SaveLoadDataSlot.StaticIndexUsed;
-    }
+
+
     public void saveDataInGame(int gold, int stageLv)
     {
+        index = SaveLoadDataSlot.StaticIndexUsed;
         MainData.MainData.totalGold += gold;
         if(stageLv == MainData.MainData.unlockStage){
             if (stageLv == 5){
@@ -43,6 +42,7 @@ public class DataInGameController : MonoBehaviour
         curentLv = MainData.MainData.lvAtribut[indexWeapon].lv;
 
         maxHp = atributDataLv.PlayerAtteributeData[0].AttributeLv[curentLv].Amount;
+        Debug.Log("ini: "+maxHp);
         armor = atributDataLv.PlayerAtteributeData[1].AttributeLv[curentLv].Amount;
         Damage = atributDataLv.WeaponsData[indexWeapon].weaponsLv[curentLv].damage;
         atkSpeed = atributDataLv.WeaponsData[indexWeapon].weaponsLv[curentLv].atkSpeed;

@@ -7,6 +7,7 @@ public class playerAtribut : MonoBehaviour
     public float hpPlayer;
     public float maxHpPlayer;
     public float damagePlayer;
+    public float atkSpeed;
     public healthPlayerControllerUi healthUi;
     public GameOverUIController GameOverUI;
     public DataInGameController data;
@@ -18,6 +19,7 @@ public class playerAtribut : MonoBehaviour
         maxHpPlayer = data.maxHp;
         hpPlayer = maxHpPlayer;
         damagePlayer = data.Damage;
+        atkSpeed = data.atkSpeed;
         healthUi.setMaxHealth(maxHpPlayer); 
     }
 

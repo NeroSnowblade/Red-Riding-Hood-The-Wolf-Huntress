@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 227465253}
   - component: {fileID: 227465252}
   - component: {fileID: 227465251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2141,7 +2141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 347606980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2836,7 +2836,7 @@ GameObject:
   - component: {fileID: 489450549}
   - component: {fileID: 489450548}
   - component: {fileID: 489450547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: depan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3016,7 +3016,7 @@ GameObject:
   - component: {fileID: 550934418}
   - component: {fileID: 550934417}
   - component: {fileID: 550934416}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BorderKiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3118,7 +3118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592502979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4360,10 +4360,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 222085231}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: HideSettingPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4998,7 +4998,7 @@ GameObject:
   - component: {fileID: 957545546}
   - component: {fileID: 957545545}
   - component: {fileID: 957545544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: borderKanan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5230,7 +5230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970901927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6087,7 +6087,7 @@ GameObject:
   - component: {fileID: 1122654587}
   - component: {fileID: 1122654586}
   - component: {fileID: 1122654585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: senjata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6605,6 +6605,10 @@ PrefabInstance:
       value: Level_1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdafc4d8cb54f5540aa6cec0712871d2, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cdafc4d8cb54f5540aa6cec0712871d2, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -7048,6 +7052,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2f22cd1082a643443915bd7ff20ef42f, type: 2}
+    - target: {fileID: -7515429101286732190, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -6763858364670572316, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -2764512629625626004, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -2045257923548263128, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -2040254050740271484, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -1853094968961178454, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -7091,6 +7115,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
       propertyPath: m_Name
       value: Level_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4418473098069316928, guid: 93525774498cc9448b56fb3c60130ec5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8394,7 +8422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1495009352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scytheSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8665,6 +8693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: duri
       objectReference: {fileID: 0}
+    - target: {fileID: -2764512629625626004, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -2762262359140785493, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 76.134995
@@ -8697,6 +8729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall2
       objectReference: {fileID: 0}
+    - target: {fileID: -1599826595754709761, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -1461304994638716399, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -8709,6 +8745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 466608246689542871, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -8716,6 +8756,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
       propertyPath: m_Name
       value: Region_2_Level_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4083501151425157549, guid: 877202be7efdfb44aa0a7ffc135f12ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -10992,7 +11036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2064461662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rotasipoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

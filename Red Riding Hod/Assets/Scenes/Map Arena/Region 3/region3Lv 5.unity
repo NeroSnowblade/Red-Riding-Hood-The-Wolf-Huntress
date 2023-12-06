@@ -643,7 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97288996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1260,7 @@ GameObject:
   - component: {fileID: 166398506}
   - component: {fileID: 166398505}
   - component: {fileID: 166398504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: borderKanan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4529,7 +4529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1033295242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scytheSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4641,7 +4641,7 @@ GameObject:
   - component: {fileID: 1079606477}
   - component: {fileID: 1079606476}
   - component: {fileID: 1079606482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5838,7 +5838,7 @@ GameObject:
   - component: {fileID: 1341787023}
   - component: {fileID: 1341787022}
   - component: {fileID: 1341787021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BorderKiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5940,7 +5940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1358396630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6454,7 +6454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1433159891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rotasipoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7470,10 +7470,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 138900201}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: HideSettingPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7644,7 +7644,7 @@ GameObject:
   - component: {fileID: 1591269610}
   - component: {fileID: 1591269609}
   - component: {fileID: 1591269608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: senjata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10522,7 +10522,7 @@ GameObject:
   - component: {fileID: 2056658465}
   - component: {fileID: 2056658464}
   - component: {fileID: 2056658463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: depan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7400,7 +7400,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 870433525}
         m_TargetAssemblyTypeName: sceneControler, Assembly-CSharp
         m_MethodName: toMainLv
         m_Mode: 1

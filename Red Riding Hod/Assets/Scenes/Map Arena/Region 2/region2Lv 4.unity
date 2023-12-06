@@ -233,10 +233,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1082382466}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: HideSettingPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -548,7 +548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97288996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 166398506}
   - component: {fileID: 166398505}
   - component: {fileID: 166398504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: borderKanan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2549,7 +2549,7 @@ GameObject:
   - component: {fileID: 454496655}
   - component: {fileID: 454496657}
   - component: {fileID: 454496656}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.022 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4556,7 +4556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1033295242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scytheSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5031,7 +5031,7 @@ GameObject:
   - component: {fileID: 1079606477}
   - component: {fileID: 1079606476}
   - component: {fileID: 1079606482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5895,10 +5895,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -6093592463355912122, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2f22cd1082a643443915bd7ff20ef42f, type: 2}
+    - target: {fileID: -2764512629625626004, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -2762262359140785493, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
@@ -5915,6 +5927,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2f22cd1082a643443915bd7ff20ef42f, type: 2}
+    - target: {fileID: -1599826595754709761, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -1461304994638716399, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5927,6 +5943,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2f22cd1082a643443915bd7ff20ef42f, type: 2}
+    - target: {fileID: -516098083770646512, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 466608246689542871, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5936,8 +5956,16 @@ PrefabInstance:
       value: Region_2_Level_4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: b4aaf89d1c321204facba8721e6cd9ce, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6486,7 +6514,7 @@ GameObject:
   - component: {fileID: 1341787023}
   - component: {fileID: 1341787022}
   - component: {fileID: 1341787021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BorderKiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6588,7 +6616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1358396630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7423,7 +7451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1433159891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rotasipoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8297,7 +8325,7 @@ GameObject:
   - component: {fileID: 1591269610}
   - component: {fileID: 1591269609}
   - component: {fileID: 1591269608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: senjata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10582,7 +10610,7 @@ GameObject:
   - component: {fileID: 2056658465}
   - component: {fileID: 2056658464}
   - component: {fileID: 2056658463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: depan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

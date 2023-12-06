@@ -501,7 +501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97288996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,30 +702,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - name: normal wave
+  - name: JEDA
     enemy: {fileID: 9146271585838554636, guid: 9198cee47f69ec949a9e4329446b821c, type: 3}
     count: 2
-    BonusGold: 10
-    rate: 3
+    BonusGold: 0
+    rate: 2
     isWave: 0
-    timeBetweenWave: 3
-  - name: Wave 1
+    timeBetweenWave: 2
+  - name: WAVE 1
     enemy: {fileID: 9146271585838554636, guid: 9198cee47f69ec949a9e4329446b821c, type: 3}
-    count: 3
+    count: 6
+    BonusGold: 10
+    rate: 1
+    isWave: 1
+    timeBetweenWave: 3
+  - name: JEDA
+    enemy: {fileID: 9146271585838554636, guid: 9198cee47f69ec949a9e4329446b821c, type: 3}
+    count: 4
+    BonusGold: 0
+    rate: 2
+    isWave: 0
+    timeBetweenWave: 2
+  - name: WAVE 2
+    enemy: {fileID: 9146271585838554636, guid: 9198cee47f69ec949a9e4329446b821c, type: 3}
+    count: 10
     BonusGold: 10
     rate: 1
     isWave: 1
     timeBetweenWave: 5
-  - name: normal wave
+  - name: FINAL WAVE
     enemy: {fileID: 9146271585838554636, guid: 9198cee47f69ec949a9e4329446b821c, type: 3}
-    count: 3
-    BonusGold: 10
-    rate: 3
-    isWave: 0
-    timeBetweenWave: 5
-  - name: final wave
-    enemy: {fileID: 9146271585838554636, guid: 9198cee47f69ec949a9e4329446b821c, type: 3}
-    count: 4
+    count: 14
     BonusGold: 10
     rate: 1
     isWave: 1
@@ -789,7 +796,7 @@ GameObject:
   - component: {fileID: 166398506}
   - component: {fileID: 166398505}
   - component: {fileID: 166398504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: borderKanan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3984,7 +3991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1033295242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scytheSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4293,7 +4300,7 @@ GameObject:
   - component: {fileID: 1079606477}
   - component: {fileID: 1079606476}
   - component: {fileID: 1079606482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4339,7 +4346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811542ce91af11c4291cf5426e595d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAttack: 0
+  attackState: 0
+  cdAttack: 0
   recoil: 0
   bulletForce: 0
   rbPlayer: {fileID: 0}
@@ -4350,6 +4358,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   scytheSp: {fileID: 1033295242}
   scythePv: {fileID: 3459911789739034942, guid: 426b39a9bd82d3841bb642dce43e8ac4, type: 3}
+  atribut: {fileID: 1079606482}
 --- !u!136 &1079606478
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4456,6 +4465,7 @@ MonoBehaviour:
   hpPlayer: 0
   maxHpPlayer: 0
   damagePlayer: 0
+  atkSpeed: 0
   healthUi: {fileID: 2020012100}
   GameOverUI: {fileID: 2143744246}
   data: {fileID: 1850707292}
@@ -5391,7 +5401,7 @@ GameObject:
   - component: {fileID: 1341787023}
   - component: {fileID: 1341787022}
   - component: {fileID: 1341787021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BorderKiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5493,7 +5503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1358396630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5795,7 +5805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1433159891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rotasipoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5919,7 +5929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464109776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6855,7 +6865,7 @@ GameObject:
   - component: {fileID: 1591269610}
   - component: {fileID: 1591269609}
   - component: {fileID: 1591269608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: senjata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8656,7 +8666,7 @@ MonoBehaviour:
   indexWeapon: 1
   DataSlot: {fileID: 921288729}
   MainData: {fileID: 921288728}
-  atributDataLv: {fileID: 0}
+  atributDataLv: {fileID: 11400000, guid: 249c87e28c2d3f947a9430bdb5acef82, type: 2}
   index: 0
 --- !u!1001 &1874788511
 PrefabInstance:
@@ -8725,6 +8735,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cdafc4d8cb54f5540aa6cec0712871d2, type: 3}
       propertyPath: m_Name
       value: Level_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cdafc4d8cb54f5540aa6cec0712871d2, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cdafc4d8cb54f5540aa6cec0712871d2, type: 3}
       propertyPath: m_TagString
@@ -10072,7 +10086,7 @@ GameObject:
   - component: {fileID: 2056658465}
   - component: {fileID: 2056658464}
   - component: {fileID: 2056658463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: depan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10553,10 +10567,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1927817846}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: HideSettingPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10565,9 +10579,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1384065702}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
-        m_MethodName: ToMenu
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
