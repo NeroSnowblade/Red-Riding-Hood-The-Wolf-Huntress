@@ -28,6 +28,10 @@ public class playerController : MonoBehaviour
     private AudioManager audioManager;
     public playerAtribut atribut;
 
+    private Vector3 lastVelocity;
+    private Vector3 lastNormal;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +62,37 @@ public class playerController : MonoBehaviour
         rotateWepon();
         playerAttack();
         Facing();
+        lastVelocity = rbPlayer.velocity;
     }
+    private void OnCollisionExit()
+    {
+        lastNormal = Vector3.zero;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //rata2 normal yang kena ke collider
+        Vector3 normal = Vector3.zero;
+        for (int i = 0; i < collision.contactCount; i++)
+            normal += collision.contacts[i].normal;
+
+        //simpan arah normal buat dipakai pengecekan nanti
+        lastNormal = normal;
+        //ganti arah recoilPos ke arah pantulan dan dikali setengah
+        rbPlayer.velocity = Vector3.Reflect(lastVelocity, normal.normalized) * 0.5f;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        //rata2 normal yang kena ke collider
+        Vector3 normal = Vector3.zero;
+        for (int i = 0; i < collision.contactCount; i++)
+            normal += collision.contacts[i].normal;
+
+        //simpan arah normal buat dipakai pengecekan nanti
+        lastNormal = normal;
+    }
+
     // fungsi player Attak
     void playerAttack()
     {
@@ -101,6 +135,11 @@ public class playerController : MonoBehaviour
         Vector3 recoilPos;
         recoilPos = mousePos - gameObject.transform.position; // menentukan arah mousePos
         recoilPos = new Vector3(recoilPos.x, recoilPos.y, recoilPos.z).normalized; // membuat posisi recoilPos menjadi antara -1 sampai 1
+
+        //cek kalau recoilPos mengarah ke arah normal yg terakhir disimpan, kalau iya, ganti arah recoilPos ke arah pantulan dan dikali setengah
+        if (lastNormal != Vector3.zero && Vector3.Dot(lastNormal, recoilPos) > 0)
+            recoilPos = Vector3.Reflect(recoilPos, lastNormal) * 0.5f;
+
         rbPlayer.AddForce(new Vector3(recoilPos.x, recoilPos.y, 0) * -recoil, ForceMode.VelocityChange); // memberi gaya recoilPos pada object
     }
     // fungsi rotasi senjata
