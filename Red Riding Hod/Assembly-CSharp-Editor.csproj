@@ -729,6 +729,9 @@
     <Reference Include="Unity.Recorder.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
@@ -740,6 +743,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
@@ -789,11 +795,11 @@
     <Reference Include="Unity.VisualEffectGraph.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
@@ -822,6 +828,9 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Updater">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
@@ -843,14 +852,17 @@
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Searcher.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+        <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
         <HintPath>A:\github\unity\ui\Red-Riding-Hood-The-Wolf-Huntress\Red Riding Hod\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
