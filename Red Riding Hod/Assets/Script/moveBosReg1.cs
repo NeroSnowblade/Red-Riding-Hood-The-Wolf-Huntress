@@ -15,10 +15,13 @@ public class moveBosReg1 : MonoBehaviour
     private Rigidbody rb;
     private float cdDiem = 10;
     public float cdDiemTime=0;
+
+    public Animator Anim;
     // Start is called before the first frame update
     void Start()
     {
        rb = gameObject.GetComponent<Rigidbody>();
+       Anim = gameObject.GetComponent<Animator>();
        isMove=false;
        keKiri=true;
     }
@@ -26,7 +29,13 @@ public class moveBosReg1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isMove){move();}else{attackController();}
+        if(isMove){
+            move();
+        }else
+        {
+            attackController();
+        }
+        Animasi(isMove);
         
     }
 
@@ -53,7 +62,7 @@ public class moveBosReg1 : MonoBehaviour
     void attackController(){
         if(cdDiemTime >= cdDiem){
             keKiri = !keKiri;
-            jump(keKiri?8:5);
+            jump(keKiri?8.5f:5);
             isMove = true;
             float moveDirection = keKiri ? -1.0f : 1.0f;
             rb.velocity = new Vector3(moveDirection * speed, rb.velocity.y, 0);
@@ -66,5 +75,7 @@ public class moveBosReg1 : MonoBehaviour
     void Facing(bool isFaceLeft){
         gameObject.transform.rotation = isFaceLeft ? Quaternion.Euler(0,0,0) : Quaternion.Euler(0,180,0);
     }
-    
+    void Animasi(bool run){
+        Anim.SetBool("run",run);
+    }
 }

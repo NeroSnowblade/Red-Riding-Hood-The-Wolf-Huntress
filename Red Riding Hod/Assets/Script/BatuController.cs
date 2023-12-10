@@ -9,7 +9,7 @@ public class BatuController : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-        Damage = GameObject.Find("Bos1").GetComponent<BosReg1Atribut>().DamageAttack;
+        Damage = GameObject.Find("Serigala").GetComponent<BosReg1Atribut>().DamageAttack;
         Destroy(gameObject,life);
     }
 
