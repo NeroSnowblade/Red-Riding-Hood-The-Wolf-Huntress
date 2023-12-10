@@ -147,19 +147,21 @@ public class playerController : MonoBehaviour
     {
         Vector3 rotation = mousePosition - rotpoint.position;//variabel untuk membuat rotasi (diambil dari mouse position dikurang object position(object rotasi))
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
-        rotpoint.transform.rotation = Quaternion.Euler(0, 0, rotz);//membuat rotasi objek sesuai sudud variable rotz
+        float rotx = isFacing?180:0;
+        float pengali = isFacing?1:(-1);
+        rotpoint.transform.rotation = Quaternion.Euler(rotx, 180, pengali*(rotz-15));//membuat rotasi objek sesuai sudud variable rotz
     }
     // facing
     void Facing()
     {
         if (mousePosition.x - transform.position.x < 0 && !isFacing)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             isFacing = true;
         }
         if (mousePosition.x - transform.position.x > 0 && isFacing)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             isFacing = false;
         }
     }
