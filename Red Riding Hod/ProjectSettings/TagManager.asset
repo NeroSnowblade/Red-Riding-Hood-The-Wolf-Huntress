@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Scythe
   - Ground
+  - Enemy_Bullet
   layers:
   - Default
   - TransparentFX
