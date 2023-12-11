@@ -27,5 +27,10 @@ public class bulletController : MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("ppp");
         }
+        if(col.GetComponent<AtributBat>() != null){
+            col.gameObject.GetComponent<AtributBat>().TakeDamage(playerAtribut.damagePlayer);
+            Destroy(this.gameObject);
+            Debug.Log("ppp");
+        }
     }
 }

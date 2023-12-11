@@ -62,7 +62,7 @@ public class moveBosReg1 : MonoBehaviour
     void attackController(){
         if(cdDiemTime >= cdDiem){
             keKiri = !keKiri;
-            jump(keKiri?8.5f:5);
+            jump(keKiri?9f:5);
             isMove = true;
             float moveDirection = keKiri ? -1.0f : 1.0f;
             rb.velocity = new Vector3(moveDirection * speed, rb.velocity.y, 0);

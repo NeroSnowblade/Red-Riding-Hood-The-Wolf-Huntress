@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyscript : MonoBehaviour
 {
-     public GameObject player;
+    public GameObject player;
     private Transform playerPos;
     private Vector3 startingPos;
     public float distance;
@@ -13,6 +13,7 @@ public class enemyscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("player");
         playerPos = player.GetComponent<Transform>();
         startingPos = transform.position;
     }

@@ -53,8 +53,10 @@
      <Compile Include="Assets\Script\scytheController.cs" />
      <Compile Include="Assets\Script\dataController\DataTemplate.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
+     <Compile Include="Assets\Script\rg2\bulletBatController.cs" />
      <Compile Include="Assets\Script\armorPlayer.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
+     <Compile Include="Assets\Script\moveRiverse.cs" />
      <Compile Include="Assets\LeanTween\Testing\TestingSequencer.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
      <Compile Include="Assets\Script\bulletController.cs" />
@@ -71,6 +73,7 @@
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
      <Compile Include="Assets\Script\ui\ShopUITextItemController.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
+     <Compile Include="Assets\Script\rg2\AttackAreaBat.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
      <Compile Include="Assets\Script\rg2\Patrollingbat.cs" />
@@ -84,6 +87,7 @@
      <Compile Include="Assets\Script\ui\goldUiController.cs" />
      <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
      <Compile Include="Assets\Script\ui\EnemyUiController.cs" />
+     <Compile Include="Assets\Script\rg2\AttackBatKecil.cs" />
      <Compile Include="Assets\Script\SwipeController.cs" />
      <Compile Include="Assets\LeanTween\Testing\TestingIssue.cs" />
      <Compile Include="Assets\LeanTween\Testing\FollowingTests.cs" />
@@ -96,6 +100,7 @@
      <Compile Include="Assets\LeanTween\Testing\TestingIssue2.cs" />
      <Compile Include="Assets\LeanTween\Testing\Testing248.cs" />
      <Compile Include="Assets\LeanTween\Testing\TestingColorTweening.cs" />
+     <Compile Include="Assets\Script\rg2\AtributBat.cs" />
      <Compile Include="Assets\Script\sceneController\GameControl.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
      <Compile Include="Assets\Script\dataController\SaveLoadMainData.cs" />

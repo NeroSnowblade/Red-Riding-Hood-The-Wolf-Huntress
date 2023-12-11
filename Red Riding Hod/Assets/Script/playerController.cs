@@ -45,7 +45,7 @@ public class playerController : MonoBehaviour
         attackState = Attack.ready;
         isFacing = false;
         bulletForce = 15f;
-        recoil = 6f;
+        recoil = 7f;
         rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
         atribut = GameObject.Find("player").GetComponent<playerAtribut>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>(); // memasukan kamera
@@ -149,7 +149,7 @@ public class playerController : MonoBehaviour
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
         float rotx = isFacing?180:0;
         float pengali = isFacing?1:(-1);
-        rotpoint.transform.rotation = Quaternion.Euler(rotx, 180, pengali*(rotz-15));//membuat rotasi objek sesuai sudud variable rotz
+        rotpoint.transform.rotation = Quaternion.Euler(rotx, 180, pengali*rotz);//membuat rotasi objek sesuai sudud variable rotz
     }
     // facing
     void Facing()

@@ -6,10 +6,12 @@ public class EnemyBatShoot : MonoBehaviour
     [SerializeField] Transform eye;
 
     public Transform bulletPos;
-    bool isShoot;
+    bool isShoot = false;
     float shootTimer = .2f;
     public GameObject bullet;
     public float shootSpeed;
+    public Transform playerPos;
+    public float RangeAtk;
 
     public GameObject blood;
     public int enemyHP = 50;
@@ -17,38 +19,24 @@ public class EnemyBatShoot : MonoBehaviour
     // Audio
     private AudioManager audioManager;
 
-    bool seeThePlayer(float distance)
-    {
-        bool val = false;
-        float castDist = -distance;
-        Vector3 endPos = eye.position + Vector3.left * castDist; // Change Vector3.right to Vector3.left
-        RaycastHit hit;
-
-        if (Physics.Raycast(eye.position, endPos - eye.position, out hit, castDist))
-        {
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                val = true;
-            }
-            else
-            {
-                val = false;
-            }
-        }
-        else
-        {
-            Debug.DrawRay(eye.position, endPos - eye.position, Color.blue);
-        }
-        return val;
+    private void Awake() {
+        playerPos = GameObject.Find("player").transform;
     }
 
     public void Shooting()
     {
-        audioManager.PlaySound("EnemyShoot");
+        Debug.Log("pp");
+        // audioManager.PlaySound("EnemyShoot");
         if (!isShoot)
         {
-            GameObject newPeluru = Instantiate(bullet, bulletPos.position, transform.rotation);
-            newPeluru.GetComponent<Rigidbody>().velocity = transform.forward * shootSpeed;
+            Debug.Log("ppp");
+            Vector3 rotation = playerPos.position - bulletPos.position;//variabel untuk membuat rotasi (diambil dari mouse position dikurang object position(object rotasi))
+            float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
+            bulletPos.rotation = Quaternion.Euler(0, 0, rotz);
+            Debug.Log("yy");
+            var newPeluru = Instantiate(bullet, bulletPos.position, bulletPos.rotation);
+            newPeluru.transform.rotation = Quaternion.Euler(rotz+180, -90, 0);
+            newPeluru.GetComponent<Rigidbody>().velocity = newPeluru.transform.forward * shootSpeed;
             isShoot = true;
         }
     }
@@ -91,14 +79,7 @@ public class EnemyBatShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (seeThePlayer(visibility))
-        {
-            Shooting();
-        }
-        else
-        {
-            // Do something else, e.g., stop shooting animation
-        }
+        cekDistance();
 
         if (isShoot)
         {
@@ -109,6 +90,17 @@ public class EnemyBatShoot : MonoBehaviour
         {
             isShoot = false;
             shootTimer = 1.38f;
+        }
+    }
+
+    void cekDistance(){
+        float distanceToPlayer = Vector3.Distance(transform.position, playerPos.position);
+        //Debug.Log(distanceToPlayer);
+        if(distanceToPlayer <= RangeAtk){
+            Debug.Log("p");
+            Shooting();
+        }else{
+           Debug.Log("y");
         }
     }
 }
