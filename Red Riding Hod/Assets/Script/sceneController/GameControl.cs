@@ -30,7 +30,6 @@ public class GameControl : MonoBehaviour
         AudioManager.Instance.PlaySFX("Klik");
     }
 
-
     public void Resume()
     {
         pauseUI.SetActive(false);
@@ -43,7 +42,7 @@ public class GameControl : MonoBehaviour
         pauseUI.SetActive(false);
         GameStart();
         SceneManager.LoadScene(sceneName);
-        //audioManager.PlaySound("Klik");
+        AudioManager.Instance.PlaySFX("Klik");
     }
 
     public void toMainMenu()
@@ -60,8 +59,8 @@ public class GameControl : MonoBehaviour
 
     public void toMapGame()
     {
-        SceneManager.LoadScene("mainLv");
         AudioManager.Instance.PlaySFX("Klik");
+        SceneManager.LoadScene("mainLv");
     }
 
     public void ButtonMenu()

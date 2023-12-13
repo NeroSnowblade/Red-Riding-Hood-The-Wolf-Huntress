@@ -85,7 +85,6 @@
     <Compile Include="Assets\Script\ui\stageUIController.cs" />
     <Compile Include="Assets\Script\regionscript\ScrollTexture.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingSceneSwitching.cs" />
-    <Compile Include="Assets\UIController.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\Script\healthPlayerControllerUi.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
@@ -110,8 +109,8 @@
     <Compile Include="Assets\LeanTween\Testing\FollowingTests.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingOptionalCancel.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
+    <Compile Include="Assets\Script\UIController.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
-    <Compile Include="Assets\ChangeScriptButton.cs" />
     <Compile Include="Assets\Script\dataController\SaveLoadData.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingIssue2.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing248.cs" />
@@ -154,6 +153,7 @@
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
     <Compile Include="Assets\Script\dataController\DataShopController.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
+    <Compile Include="Assets\Script\ChangeScriptButton.cs" />
     <Compile Include="Assets\Script\BatuController.cs" />
     <Compile Include="Assets\Script\TrigerCakaran.cs" />
     <Compile Include="Assets\Script\rg2\enemybatshoot.cs" />

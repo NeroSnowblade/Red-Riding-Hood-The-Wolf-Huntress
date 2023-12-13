@@ -5209,6 +5209,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 419a605b4218344419cea5477961d043, type: 3}
   - name: Shoot
     clip: {fileID: 8300000, guid: adb4981d1694e0e42b6f4cec0d510bf6, type: 3}
+  - name: Coin
+    clip: {fileID: 8300000, guid: dc6ae5698c870cb428cb66ab3f847884, type: 3}
+  - name: Damage
+    clip: {fileID: 8300000, guid: 878c4ca05352e2640b3e1ecb7afcd1aa, type: 3}
+  - name: HP Boost
+    clip: {fileID: 8300000, guid: 35834bb0ff055f549b62a79ccd0d594e, type: 3}
+  - name: Shoot2
+    clip: {fileID: 8300000, guid: 4640655405e09a042affb1585ed7cc77, type: 3}
   musicSource: {fileID: 1138365716}
   sfxSource: {fileID: 640914633}
 --- !u!1 &1991139050

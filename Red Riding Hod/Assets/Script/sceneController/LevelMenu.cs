@@ -30,9 +30,6 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-
-
-
     void ButtonsToArray()
     {
         int childCount = levelButtons.transform.childCount;
