@@ -17,7 +17,7 @@ public class EnemyBatShoot : MonoBehaviour
     public int enemyHP = 50;
 
     // Audio
-    private AudioManager audioManager;
+    //private AudioManager audioManager;
 
     private void Awake() {
         playerPos = GameObject.Find("player").transform;
@@ -69,11 +69,11 @@ public class EnemyBatShoot : MonoBehaviour
     void Start()
     {
         // Audio 
-        audioManager = AudioManager.instance;
+        /*audioManager = AudioManager.instance;
         if (audioManager == null)
         {
             Debug.LogWarning("Audio Manager not found");
-        }
+        }*/
     }
 
     // Update is called once per frame

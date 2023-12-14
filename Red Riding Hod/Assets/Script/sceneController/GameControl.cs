@@ -7,51 +7,26 @@ public class GameControl : MonoBehaviour
 {
     public GameObject pauseUI;
     public string sceneName;
-
-    // public GameObject finishPanel; //belum dipakai
-    //audio
-    private AudioManager audioManager;
-    public GameObject SetUI;
-
-    public void ShowSettingPanel()
-    {
-        SetUI.SetActive(true);
-        audioManager.PlaySound("Klik");
-    }
-    public void HideSettingPanel()
-    {
-        SetUI.SetActive(false);
-        audioManager.PlaySound("Klik");
-    }
+    //public GameObject SetUI;
+    //public GameObject finishPanel; //belum dipakai
 
     void GameStart()
     {
         Time.timeScale = 1f;
-
-
-        //audio
-        audioManager.PlaySound("Backsound");
-
-
+        AudioManager.Instance.PlayMusic("Theme");
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //audio 
-        audioManager = AudioManager.instance;
-        if (audioManager == null)
-        {
-            Debug.LogWarning("Audio Manager dan ditemukan");
-        }
         GameStart();
     }
     public void Pause()
     {
         pauseUI.SetActive(true);
         Time.timeScale = 0f;
-        audioManager.PlaySound("Klik");
+        AudioManager.Instance.PlaySFX("Klik");
     }
 
 
@@ -59,7 +34,7 @@ public class GameControl : MonoBehaviour
     {
         pauseUI.SetActive(false);
         Time.timeScale = 1f;
-        audioManager.PlaySound("Klik");
+        AudioManager.Instance.PlaySFX("Klik");
     }
 
     public void Restart()
@@ -67,53 +42,42 @@ public class GameControl : MonoBehaviour
         pauseUI.SetActive(false);
         GameStart();
         SceneManager.LoadScene(sceneName);
-        audioManager.PlaySound("Klik");
+        AudioManager.Instance.PlaySFX("Klik");
     }
-    public void ToMenu()
+
+    public void toMainMenu()
     {
-        GameStart();
+        AudioManager.Instance.PlaySFX("Klik");
         SceneManager.LoadScene("MainMenu");
-        audioManager.PlaySound("Klik");
     }
-    public void ToShop()
+
+    public void toShop()
     {
-        GameStart();
+        AudioManager.Instance.PlaySFX("Klik");
         SceneManager.LoadScene("mainShop");
-        audioManager.PlaySound("Klik");
     }
 
-    public void ToMainLv()
+    public void toMapGame()
     {
-        GameStart();
+        AudioManager.Instance.PlaySFX("Klik");
         SceneManager.LoadScene("mainLv");
-        audioManager.PlaySound("Klik");
     }
 
-
-    public void ToNewLevel(int levelId)
+    public void ButtonMenu()
     {
-        if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
-        {
-            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
-            PlayerPrefs.Save();
-        }
-        
-        string levelName = "region1Lv " + levelId;
-        SceneManager.LoadScene(levelName);
+        AudioManager.Instance.PlaySFX("Klik");
     }
 
-    // public void CompleteLevel()
-    // {
-    //     finishPanel.SetActive(true);
-
-    //     resultUI.SetActive(true);
-    // }
-
-
-    // Update is called once per frame
-    void Update()
+    public void ExitGame()
     {
-
+        AudioManager.Instance.PlaySFX("Klik");
+        Application.Quit();
+        Debug.Log("Quit");
     }
+
+    /*public void CompleteLevel()
+      {
+         finishPanel.SetActive(true);
+         resultUI.SetActive(true);
+      }*/
 }
