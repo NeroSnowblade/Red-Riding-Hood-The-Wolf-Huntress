@@ -10,7 +10,7 @@ public class bulletController : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-        playerAtribut = GameObject.Find("player").GetComponent<playerAtribut>();
+        playerAtribut = GameObject.FindGameObjectWithTag("Player").GetComponent<playerAtribut>();
         Destroy(gameObject,life);
     }
     void OnTriggerEnter(Collider col)

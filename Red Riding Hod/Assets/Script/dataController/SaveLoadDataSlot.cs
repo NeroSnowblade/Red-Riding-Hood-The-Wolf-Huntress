@@ -45,6 +45,8 @@ public class SaveLoadDataSlot : MonoBehaviour
         }
         catch (System.Exception e)
         {
+            saveDataSlot();
+            Invoke("loadDataSlot", 0.1f);
             Debug.Log("Error Loaded Data : " + e);
             throw;
         }
