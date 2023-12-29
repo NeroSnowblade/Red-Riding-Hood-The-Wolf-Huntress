@@ -4,50 +4,57 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public bool isAttack;
+    public enum Attack{
+        attack,
+        cd,
+        ready,
+    };
+    public Attack attackState;
+    public float cdAttack;
     bool isFacing;
     Vector3 mousePosition;
     public float recoil;
     public float bulletForce;
-    public Rigidbody rbPlayer; //variable untuk mengambil rigidbody player
+    public Rigidbody rbPlayer;   //variable untuk mengambil rigidbody player
     public Transform trMousePos; //variable untuk mengembil posisi objek mousePos
-    public Transform bulletSP;//variable untuk mengambil posisi spawn poin bullet
-    public GameObject bulletPV; //variable untuk mengambil bullet Privab
-    public Transform rotpoint; // variable untuk mengambil titik dari rotasi(posisi objek bernama rotasipoint)
-    public Camera cam; // variable untuk mengambil camera
+    public Transform bulletSP;   //variable untuk mengambil posisi spawn poin bullet
+    public GameObject bulletPV;  //variable untuk mengambil bullet Privab
+    public Transform rotpoint;   //variable untuk mengambil titik dari rotasi(posisi objek bernama rotasipoint)
+    public Camera cam;           //variable untuk mengambil camera
 
     public Transform scytheSp;
     public GameObject scythePv;
-    //audio
-    private AudioManager audioManager;
+    //private AudioManager audioManager;
+    public playerAtribut atribut;
 
     private Vector3 lastVelocity;
     private Vector3 lastNormal;
 
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
         //audio
-        audioManager = AudioManager.instance;
-        if (audioManager == null)
-        {
+        /*audioManager = AudioManager.instance;
+          if (audioManager == null)
+          {
             Debug.LogWarning("audio manager di temukan");
-        }
+          }*/
 
-        isAttack = false;
+        attackState = Attack.ready;
         isFacing = false;
         bulletForce = 15f;
-        recoil = 6f;
+        recoil = 7f;
         rbPlayer = GameObject.Find("player").GetComponent<Rigidbody>();
-        cam = GameObject.Find("Main Camera").GetComponent<Camera>(); // memasukan kamera
+        atribut = GameObject.Find("player").GetComponent<playerAtribut>();
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>(); //memasukan kamera
         rotpoint = GameObject.Find("rotasipoint").transform;
         trMousePos = GameObject.Find("mousePos").transform;
         bulletSP = GameObject.Find("spawnBullet").transform;
         scytheSp = GameObject.Find("scytheSpawnPoint").transform;
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         getMousePosition();
@@ -56,6 +63,7 @@ public class playerController : MonoBehaviour
         Facing();
         lastVelocity = rbPlayer.velocity;
     }
+
     private void OnCollisionExit()
     {
         lastNormal = Vector3.zero;
@@ -88,13 +96,15 @@ public class playerController : MonoBehaviour
     // fungsi player Attak
     void playerAttack()
     {
-        audioManager.PlaySound("Shoot");
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && attackState == Attack.ready)
         { // mengetahui jika mouse di tekan ke bawah
-            isAttack = true;
+            attackState = Attack.attack;
+           AudioManager.Instance.PlaySFX("Shoot");
         }
-        if (isAttack)
+
+        if (attackState == Attack.attack)
         {
+            AudioManager.Instance.PlaySFX("Shoot");
             for (int i = -2; i < 2; i++)
             {
                 var bullet = Instantiate(bulletPV, bulletSP.position, bulletSP.rotation);//belum jadi
@@ -105,10 +115,16 @@ public class playerController : MonoBehaviour
             }
             PlayerMove(mousePosition);
             var Scythe = Instantiate(scythePv, scytheSp.position, Quaternion.identity);
-            isAttack = false;
+            cdAttack = 0.3f * 1/atribut.atkSpeed;
+            attackState = Attack.cd;
+        }
+
+        if(attackState == Attack.cd){
+            cdAtk();
         }
     }
-    // fungsi mengambil posisi mouse
+
+    //Fungsi mengambil posisi mouse
     void getMousePosition()
     {
         var mousePos = Input.mousePosition;
@@ -116,6 +132,7 @@ public class playerController : MonoBehaviour
         mousePosition = cam.ScreenToWorldPoint(mousePos);
         trMousePos.position = mousePosition;
     }
+
     //fungsi menggerakan player
     void PlayerMove(Vector3 mousePos)
     {
@@ -129,25 +146,42 @@ public class playerController : MonoBehaviour
 
         rbPlayer.AddForce(new Vector3(recoilPos.x, recoilPos.y, 0) * -recoil, ForceMode.VelocityChange); // memberi gaya recoilPos pada object
     }
-    // fungsi rotasi senjata
+
+    //Fungsi rotasi senjata
     void rotateWepon()
     {
         Vector3 rotation = mousePosition - rotpoint.position;//variabel untuk membuat rotasi (diambil dari mouse position dikurang object position(object rotasi))
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;//variabel untuk membuat derajat rotasi(diambil dari Tangen(variabel rotation(y,x))selain sumbu rotasi)
-        rotpoint.transform.rotation = Quaternion.Euler(0, 0, rotz);//membuat rotasi objek sesuai sudud variable rotz
+        float rotx = isFacing?180:0;
+        float pengali = isFacing?1:(-1);
+        rotpoint.transform.rotation = Quaternion.Euler(rotx, 180, pengali*rotz);//membuat rotasi objek sesuai sudud variable rotz
     }
-    // facing
+
+    //Facing
     void Facing()
     {
         if (mousePosition.x - transform.position.x < 0 && !isFacing)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             isFacing = true;
         }
+
         if (mousePosition.x - transform.position.x > 0 && isFacing)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             isFacing = false;
         }
     }
+
+    public void cdAtk(){
+        if(cdAttack <= 0){
+            attackState = Attack.ready;
+        }
+        
+        else{
+            cdAttack -= Time.deltaTime;
+            Debug.Log(cdAttack);
+        }
+    }
+
 }

@@ -151,9 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5215a14d68ac047b2ccdc59992f44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirt: {fileID: 1000010675638318, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
   blood: {fileID: 3312865178454354620, guid: 87a8f59c13f665e4c87d1e4554d06dcf, type: 3}
-  life: 0
+  life: 0.2
+  playerAtribut: {fileID: 0}
 --- !u!65 &3202449647076492523
 BoxCollider:
   m_ObjectHideFlags: 0

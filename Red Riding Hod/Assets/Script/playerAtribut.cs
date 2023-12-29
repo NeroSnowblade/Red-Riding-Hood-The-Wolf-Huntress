@@ -7,14 +7,19 @@ public class playerAtribut : MonoBehaviour
     public float hpPlayer;
     public float maxHpPlayer;
     public float damagePlayer;
+    public float atkSpeed;
     public healthPlayerControllerUi healthUi;
     public GameOverUIController GameOverUI;
+    public DataInGameController data;
     // Start is called before the first frame update
     void Start()
     {
-        maxHpPlayer = 100;
+        data.setAtribut();
+        Debug.Log(data.maxHp);
+        maxHpPlayer = data.maxHp;
         hpPlayer = maxHpPlayer;
-        damagePlayer = 40;
+        damagePlayer = data.Damage;
+        atkSpeed = data.atkSpeed;
         healthUi.setMaxHealth(maxHpPlayer); 
     }
 

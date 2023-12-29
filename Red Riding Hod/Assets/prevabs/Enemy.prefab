@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4073530047495844044}
   - component: {fileID: 6444175411608638934}
   - component: {fileID: 2297551772629663946}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: -2739149271760447601}
   - component: {fileID: 6773129213457961646}
   - component: {fileID: 455037361573112056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 410883539097891453}
   - component: {fileID: 4034738488510498606}
   - component: {fileID: 6550643508338307434}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: kaki
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024fd74ed2344aa47aeebc6b296c2113, type: 3}
+  m_Name: AtributData
+  m_EditorClassIdentifier: 
+  WeaponsData:
+  - name: Shotgun
+    weaponsLv:
+    - costLvUnlock: 100
+      damage: 10
+      atkSpeed: 1
+    - costLvUnlock: 200
+      damage: 15
+      atkSpeed: 1.1
+    - costLvUnlock: 400
+      damage: 20
+      atkSpeed: 1.2
+  - name: Flamegun
+    weaponsLv:
+    - costLvUnlock: 300
+      damage: 5
+      atkSpeed: 0.5
+    - costLvUnlock: 600
+      damage: 6
+      atkSpeed: 0.6
+    - costLvUnlock: 800
+      damage: 7
+      atkSpeed: 0.7
+  - name: Bazoka
+    weaponsLv:
+    - costLvUnlock: 500
+      damage: 5
+      atkSpeed: 0.7
+    - costLvUnlock: 700
+      damage: 10
+      atkSpeed: 0.8
+    - costLvUnlock: 900
+      damage: 15
+      atkSpeed: 0.9
+  PlayerAtteributeData:
+  - name: Hp
+    AttributeLv:
+    - costLvUnlock: 200
+      Amount: 100
+    - costLvUnlock: 300
+      Amount: 125
+    - costLvUnlock: 400
+      Amount: 150
+  - name: Armor
+    AttributeLv:
+    - costLvUnlock: 200
+      Amount: 5
+    - costLvUnlock: 300
+      Amount: 6
+    - costLvUnlock: 400
+      Amount: 7

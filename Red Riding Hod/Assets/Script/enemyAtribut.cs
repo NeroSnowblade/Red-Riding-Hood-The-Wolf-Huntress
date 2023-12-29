@@ -19,27 +19,22 @@ public class enemyAtribut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHpEnemy = 100f;
         HpEnemy = maxHpEnemy; 
         Damage = 5f;
         Gold = 5;
         isDestroy = false;
 
-        scripAtribut = GameObject.Find("player").GetComponent<playerAtribut>();
-        GoldUI = GameObject.Find("ui Gold Collected").GetComponent<goldUiController>();
-        enemyUI = GameObject.Find("ui Enemy remaining").GetComponent<EnemyUiController>();
+        scripAtribut = FindObjectOfType<playerAtribut>();
+        GoldUI = FindObjectOfType<goldUiController>();
+        enemyUI = FindObjectOfType<EnemyUiController>();
         
     }    
 
-    // Update is called once per frame
-    void Update()
-    {
-        Destroy();
-    }
-
     public void TakeDamage(float Damage){
         HpEnemy -= Damage;
-        Debug.Log("hp enemy = "+HpEnemy);
+        Debug.Log(HpEnemy);
+        if(HpEnemy <= 0)
+            Destroy();
     }
 
     private void OnTriggerEnter(Collider collider) // cek apakah ada object yang masuk
@@ -55,7 +50,7 @@ public class enemyAtribut : MonoBehaviour
     void Destroy(){
         if(HpEnemy<=0 && !isDestroy){
             GoldUI.addGold(Gold);
-            enemyUI.enemyMati();
+            enemyUI?.enemyMati();
             isDestroy = true;
             Destroy(gameObject,.2f);
         }

@@ -8,18 +8,20 @@ TagManager:
   - Enemy
   - Scythe
   - Ground
+  - wall
+  - player
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
+  - enemy
+  - player
+  - ground
+  - border
   - 
   - 
   - 
