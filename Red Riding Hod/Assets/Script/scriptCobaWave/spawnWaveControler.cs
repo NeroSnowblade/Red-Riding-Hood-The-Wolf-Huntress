@@ -15,39 +15,50 @@ public class spawnWaveControler : MonoBehaviour
         public int BonusGold;
         public float rate;
         public bool isWave;
+        public float timeBetweenWave;
     }
 
     public Wave[] waves;
     int nextWave = 0;
 
-    public float timeBetweenWave = 5f;
+    
     public float waveCountdown;
 
     public float SearchCountdown = 1f;
+    public int stageKe;
+    public bool isEnding;
 
     public spawnState state = spawnState.counting;
     public GameObject[] spawnPoints;
 
     public EnemyUiController enemyUI;
     public waveUIController waveUI;
-    public stageUIController stageUI;
+    public InGameUIComplitedController ComplitedUI;
     public goldUiController goldUI;
+
+    public DataInGameController dataController;
 
     void Start()
     {
-        waveCountdown = timeBetweenWave;
+        isEnding = false;
+        waveCountdown = waves[nextWave].timeBetweenWave;
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        enemyUI = GameObject.Find("ui Enemy remaining").GetComponent<EnemyUiController>();
-        waveUI = GameObject.Find("Wave Panel Controller").GetComponent<waveUIController>();
+        enemyUI = FindObjectOfType<EnemyUiController>();
+        waveUI = FindObjectOfType<waveUIController>();
+        Debug.Log("Start Count DOwn");
+        InvokeRepeating("CountDown", 0, 1);
     }
 
-    void Update()
+    void CountDown()
     {
-        if (state == spawnState.ending)
+        Debug.Log("Count DOwn " + state);
+        if (state == spawnState.ending && !isEnding)
         {
             Debug.Log("stage complite");
-            string gold = goldUI.getGold().ToString();
-            stageUI.PanelCompliteOn(gold);
+            int gold = goldUI.getGold();
+            ComplitedUI.PanelCompliteOn(gold);
+            dataController.saveDataInGame(gold,stageKe);
+            isEnding = true;
         }
         if(state == spawnState.waiting) // ketika state menunggu wave
         {
@@ -59,25 +70,17 @@ public class spawnWaveControler : MonoBehaviour
                 return;
             }
         }
-        if (waveCountdown<=0) // jika sudah tidak countdown
+        if (state != spawnState.spawning && state != spawnState.ending) // jika statenya spawning
         {
-            if (state != spawnState.spawning && state != spawnState.ending) // jika statenya spawning
-            {
-                StartCoroutine(SpawnWave( waves[nextWave] ));//memulai wave
-            }
-
-        }
-        else
-        {
-            waveCountdown-=Time.deltaTime; // pengurangan countdown
+            StartCoroutine(SpawnWave( waves[nextWave] ));//memulai wave
         }
     }
     // memulai wave
     IEnumerator SpawnWave(Wave _wave)
     {
         Debug.Log("is wave for "+ _wave.name);
-        waveUI.SetPanelWave(_wave.name,false,timeBetweenWave);
-        enemyUI.setBanyakEnemy(_wave.count);
+        waveUI.SetPanelWave(_wave.name,false,waves[nextWave].timeBetweenWave);
+        //enemyUI.setBanyakEnemy(_wave.count);
         state = spawnState.spawning;
         for (int i = 0; i < _wave.count; i++) // looping spawn enemy
         {
@@ -89,8 +92,8 @@ public class spawnWaveControler : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
-        Transform _sp = spawnPoints[Random.Range(0,spawnPoints.Length)].transform; // mengambil spawn point random
-        Instantiate(_enemy,_sp.position,_sp.rotation); // spawn enemy
+        Vector3 _sp = Vector3.Lerp(transform.position, transform.position + Vector3.right * 2, Random.value); // mengambil spawn point random
+        Instantiate(_enemy, _sp, Quaternion.identity); // spawn enemy
         Debug.Log("spawning enemy : "+_enemy.name);
     }
     // ketika wave sudah selesai
@@ -105,8 +108,8 @@ public class spawnWaveControler : MonoBehaviour
         }else{
             nextWave++; // next sesi
             state = spawnState.counting; // mengembalikan state ke counting
-            waveCountdown = timeBetweenWave; // mengembalikan countdown ke waktu tunggu wave
-            waveUI.SetPanelWave(waves[nextWave].name,waves[nextWave].isWave,timeBetweenWave); // munculin ui wave
+            waveCountdown = waves[nextWave].timeBetweenWave; // mengembalikan countdown ke waktu tunggu wave
+            waveUI.SetPanelWave(waves[nextWave].name,waves[nextWave].isWave,waves[nextWave].timeBetweenWave); // munculin ui wave
         }
 
     }

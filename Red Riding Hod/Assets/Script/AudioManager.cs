@@ -1,66 +1,82 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    [SerializeField]
-    Sound[] sounds;
+    public static AudioManager Instance;
 
+    public Sound[] musicSounds, sfxSounds;
+    public AudioSource musicSource, sfxSource;
 
     private void Awake()
     {
-        foreach (Sound s in sounds)
+        if (Instance == null)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.outputAudioMixerGroup = s.output;
-            s.source.volume = s.volume;
-            s.source.loop = s.loop;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        if (instance != null)
-        {
-            Debug.LogWarning("Lebih dari satu audio manager di scene");
-        }
+
         else
         {
-            instance = this;
+            Destroy(gameObject);
         }
     }
 
-    public void PlaySound(string _name)
+    private void Start()
     {
-        for (int i = 0; i < sounds.Length; i++)
+        PlayMusic("Theme");
+    }
+
+    public void PlayMusic(string name)
+    {
+        Sound s = Array.Find(musicSounds, x => x.name == name);
+
+        if (s == null)
         {
-            if (sounds[i].name == _name)
-            {
-                sounds[i].Play();
-                return;
-            }
+            Debug.Log("Musik Tidak Ditemukan");
         }
-    }
-    public void StopSound(string _name)
-    {
-        for (int i = 0; i < sounds.Length; i++)
+
+        else
         {
-            if (sounds[i].name == _name)
-            {
-                sounds[i].Stop();
-                return;
-            }
+            musicSource.clip = s.clip;
+            musicSource.Play();
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    public void PlaySFX(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("SFX Tidak Ditemukan");
+        }
+
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ToogleMusic()
     {
+        musicSource.mute = !musicSource.mute;
+    }
 
+    public void ToogleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
+
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
     }
 }
